@@ -1,0 +1,659 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD5933D72C91B8670000F287 /* ForecastFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5933D62C91B8670000F287 /* ForecastFlowApp.swift */; };
+		AD5933D92C91B8670000F287 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5933D82C91B8670000F287 /* ContentView.swift */; };
+		AD5933DB2C91B8680000F287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD5933DA2C91B8680000F287 /* Assets.xcassets */; };
+		AD5933DE2C91B8680000F287 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD5933DD2C91B8680000F287 /* Preview Assets.xcassets */; };
+		AD5933E82C91B8680000F287 /* ForecastFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5933E72C91B8680000F287 /* ForecastFlowTests.swift */; };
+		AD5933F22C91B8680000F287 /* ForecastFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5933F12C91B8680000F287 /* ForecastFlowUITests.swift */; };
+		AD5933F42C91B8680000F287 /* ForecastFlowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5933F32C91B8680000F287 /* ForecastFlowUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD5933E42C91B8680000F287 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD5933CB2C91B8670000F287 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD5933D22C91B8670000F287;
+			remoteInfo = ForecastFlow;
+		};
+		AD5933EE2C91B8680000F287 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD5933CB2C91B8670000F287 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD5933D22C91B8670000F287;
+			remoteInfo = ForecastFlow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AD5933D32C91B8670000F287 /* ForecastFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForecastFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD5933D62C91B8670000F287 /* ForecastFlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastFlowApp.swift; sourceTree = "<group>"; };
+		AD5933D82C91B8670000F287 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AD5933DA2C91B8680000F287 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD5933DD2C91B8680000F287 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AD5933E32C91B8680000F287 /* ForecastFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForecastFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD5933E72C91B8680000F287 /* ForecastFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastFlowTests.swift; sourceTree = "<group>"; };
+		AD5933ED2C91B8680000F287 /* ForecastFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForecastFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD5933F12C91B8680000F287 /* ForecastFlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastFlowUITests.swift; sourceTree = "<group>"; };
+		AD5933F32C91B8680000F287 /* ForecastFlowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastFlowUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD5933D02C91B8670000F287 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5933E02C91B8680000F287 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5933EA2C91B8680000F287 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD5933CA2C91B8670000F287 = {
+			isa = PBXGroup;
+			children = (
+				AD5933D52C91B8670000F287 /* ForecastFlow */,
+				AD5933E62C91B8680000F287 /* ForecastFlowTests */,
+				AD5933F02C91B8680000F287 /* ForecastFlowUITests */,
+				AD5933D42C91B8670000F287 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AD5933D42C91B8670000F287 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD5933D32C91B8670000F287 /* ForecastFlow.app */,
+				AD5933E32C91B8680000F287 /* ForecastFlowTests.xctest */,
+				AD5933ED2C91B8680000F287 /* ForecastFlowUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD5933D52C91B8670000F287 /* ForecastFlow */ = {
+			isa = PBXGroup;
+			children = (
+				AD5933D62C91B8670000F287 /* ForecastFlowApp.swift */,
+				AD5934042C91BBE60000F287 /* Utilities */,
+				AD5934002C91BB3C0000F287 /* Resources */,
+				AD5934062C91BC140000F287 /* Extensions */,
+				AD5934072C91BC4A0000F287 /* MockData */,
+				AD5934052C91BC080000F287 /* Services */,
+				AD5934082C91BC5C0000F287 /* Models */,
+				AD5934092C91BC6B0000F287 /* Core */,
+				AD5933D82C91B8670000F287 /* ContentView.swift */,
+				AD5933DC2C91B8680000F287 /* Preview Content */,
+			);
+			path = ForecastFlow;
+			sourceTree = "<group>";
+		};
+		AD5933DC2C91B8680000F287 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AD5933DD2C91B8680000F287 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AD5933E62C91B8680000F287 /* ForecastFlowTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD5933E72C91B8680000F287 /* ForecastFlowTests.swift */,
+			);
+			path = ForecastFlowTests;
+			sourceTree = "<group>";
+		};
+		AD5933F02C91B8680000F287 /* ForecastFlowUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AD5933F12C91B8680000F287 /* ForecastFlowUITests.swift */,
+				AD5933F32C91B8680000F287 /* ForecastFlowUITestsLaunchTests.swift */,
+			);
+			path = ForecastFlowUITests;
+			sourceTree = "<group>";
+		};
+		AD5934002C91BB3C0000F287 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AD5933DA2C91B8680000F287 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AD5934042C91BBE60000F287 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AD5934052C91BC080000F287 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AD5934062C91BC140000F287 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AD5934072C91BC4A0000F287 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		AD5934082C91BC5C0000F287 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AD5934092C91BC6B0000F287 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD5933D22C91B8670000F287 /* ForecastFlow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD5933F72C91B8680000F287 /* Build configuration list for PBXNativeTarget "ForecastFlow" */;
+			buildPhases = (
+				AD5933CF2C91B8670000F287 /* Sources */,
+				AD5933D02C91B8670000F287 /* Frameworks */,
+				AD5933D12C91B8670000F287 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ForecastFlow;
+			productName = ForecastFlow;
+			productReference = AD5933D32C91B8670000F287 /* ForecastFlow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AD5933E22C91B8680000F287 /* ForecastFlowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD5933FA2C91B8680000F287 /* Build configuration list for PBXNativeTarget "ForecastFlowTests" */;
+			buildPhases = (
+				AD5933DF2C91B8680000F287 /* Sources */,
+				AD5933E02C91B8680000F287 /* Frameworks */,
+				AD5933E12C91B8680000F287 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD5933E52C91B8680000F287 /* PBXTargetDependency */,
+			);
+			name = ForecastFlowTests;
+			productName = ForecastFlowTests;
+			productReference = AD5933E32C91B8680000F287 /* ForecastFlowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AD5933EC2C91B8680000F287 /* ForecastFlowUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD5933FD2C91B8680000F287 /* Build configuration list for PBXNativeTarget "ForecastFlowUITests" */;
+			buildPhases = (
+				AD5933E92C91B8680000F287 /* Sources */,
+				AD5933EA2C91B8680000F287 /* Frameworks */,
+				AD5933EB2C91B8680000F287 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD5933EF2C91B8680000F287 /* PBXTargetDependency */,
+			);
+			name = ForecastFlowUITests;
+			productName = ForecastFlowUITests;
+			productReference = AD5933ED2C91B8680000F287 /* ForecastFlowUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD5933CB2C91B8670000F287 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					AD5933D22C91B8670000F287 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					AD5933E22C91B8680000F287 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = AD5933D22C91B8670000F287;
+					};
+					AD5933EC2C91B8680000F287 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = AD5933D22C91B8670000F287;
+					};
+				};
+			};
+			buildConfigurationList = AD5933CE2C91B8670000F287 /* Build configuration list for PBXProject "ForecastFlow" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD5933CA2C91B8670000F287;
+			productRefGroup = AD5933D42C91B8670000F287 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD5933D22C91B8670000F287 /* ForecastFlow */,
+				AD5933E22C91B8680000F287 /* ForecastFlowTests */,
+				AD5933EC2C91B8680000F287 /* ForecastFlowUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD5933D12C91B8670000F287 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD5933DE2C91B8680000F287 /* Preview Assets.xcassets in Resources */,
+				AD5933DB2C91B8680000F287 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5933E12C91B8680000F287 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5933EB2C91B8680000F287 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD5933CF2C91B8670000F287 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD5933D92C91B8670000F287 /* ContentView.swift in Sources */,
+				AD5933D72C91B8670000F287 /* ForecastFlowApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5933DF2C91B8680000F287 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD5933E82C91B8680000F287 /* ForecastFlowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5933E92C91B8680000F287 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD5933F22C91B8680000F287 /* ForecastFlowUITests.swift in Sources */,
+				AD5933F42C91B8680000F287 /* ForecastFlowUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD5933E52C91B8680000F287 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD5933D22C91B8670000F287 /* ForecastFlow */;
+			targetProxy = AD5933E42C91B8680000F287 /* PBXContainerItemProxy */;
+		};
+		AD5933EF2C91B8680000F287 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD5933D22C91B8670000F287 /* ForecastFlow */;
+			targetProxy = AD5933EE2C91B8680000F287 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AD5933F52C91B8680000F287 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD5933F62C91B8680000F287 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD5933F82C91B8680000F287 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ForecastFlow/Preview Content\"";
+				DEVELOPMENT_TEAM = SD48432CPV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Deadly.Dragon.ForecastFlow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD5933F92C91B8680000F287 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ForecastFlow/Preview Content\"";
+				DEVELOPMENT_TEAM = SD48432CPV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Deadly.Dragon.ForecastFlow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AD5933FB2C91B8680000F287 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SD48432CPV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tony.chen.ForecastFlowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ForecastFlow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ForecastFlow";
+			};
+			name = Debug;
+		};
+		AD5933FC2C91B8680000F287 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SD48432CPV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tony.chen.ForecastFlowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ForecastFlow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ForecastFlow";
+			};
+			name = Release;
+		};
+		AD5933FE2C91B8680000F287 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SD48432CPV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tony.chen.ForecastFlowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ForecastFlow;
+			};
+			name = Debug;
+		};
+		AD5933FF2C91B8680000F287 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SD48432CPV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tony.chen.ForecastFlowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ForecastFlow;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD5933CE2C91B8670000F287 /* Build configuration list for PBXProject "ForecastFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD5933F52C91B8680000F287 /* Debug */,
+				AD5933F62C91B8680000F287 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD5933F72C91B8680000F287 /* Build configuration list for PBXNativeTarget "ForecastFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD5933F82C91B8680000F287 /* Debug */,
+				AD5933F92C91B8680000F287 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD5933FA2C91B8680000F287 /* Build configuration list for PBXNativeTarget "ForecastFlowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD5933FB2C91B8680000F287 /* Debug */,
+				AD5933FC2C91B8680000F287 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD5933FD2C91B8680000F287 /* Build configuration list for PBXNativeTarget "ForecastFlowUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD5933FE2C91B8680000F287 /* Debug */,
+				AD5933FF2C91B8680000F287 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD5933CB2C91B8670000F287 /* Project object */;
+}
