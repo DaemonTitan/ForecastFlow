@@ -1,0 +1,13 @@
+strings:
+   inputs: ForecastFlow/Resources/en.lproj
+   filter: .+\.strings$
+   outputs:
+     - templateName: structured-swift5
+       output: ForecastFlow/Resources/Strings+Generated.swift
+xcassets:
+   inputs:
+        - ForecastFlow/Resources/Colours.xcassets
+        - ForecastFlow/Resources/Images.xcassets
+   outputs:
+     - templatePath: swiftui-xcassets.stencil
+       output: ForecastFlow/Resources/XCAssets+Generated.swift

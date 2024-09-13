@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		AD5933D72C91B8670000F287 /* ForecastFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5933D62C91B8670000F287 /* ForecastFlowApp.swift */; };
 		AD5933D92C91B8670000F287 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5933D82C91B8670000F287 /* ContentView.swift */; };
-		AD5933DB2C91B8680000F287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD5933DA2C91B8680000F287 /* Assets.xcassets */; };
+		AD5933DB2C91B8680000F287 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD5933DA2C91B8680000F287 /* Images.xcassets */; };
 		AD5933DE2C91B8680000F287 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD5933DD2C91B8680000F287 /* Preview Assets.xcassets */; };
 		AD5933E82C91B8680000F287 /* ForecastFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5933E72C91B8680000F287 /* ForecastFlowTests.swift */; };
 		AD5933F22C91B8680000F287 /* ForecastFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5933F12C91B8680000F287 /* ForecastFlowUITests.swift */; };
 		AD5933F42C91B8680000F287 /* ForecastFlowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5933F32C91B8680000F287 /* ForecastFlowUITestsLaunchTests.swift */; };
+		AD59340E2C948A430000F287 /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD59340D2C948A430000F287 /* Colours.xcassets */; };
+		AD5934112C948A510000F287 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD59340F2C948A510000F287 /* Localizable.strings */; };
+		AD5934152C9494550000F287 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5934142C9494550000F287 /* Strings+Generated.swift */; };
+		AD5934172C94945B0000F287 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5934162C94945B0000F287 /* XCAssets+Generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,13 +41,18 @@
 		AD5933D32C91B8670000F287 /* ForecastFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForecastFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5933D62C91B8670000F287 /* ForecastFlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastFlowApp.swift; sourceTree = "<group>"; };
 		AD5933D82C91B8670000F287 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		AD5933DA2C91B8680000F287 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD5933DA2C91B8680000F287 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AD5933DD2C91B8680000F287 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AD5933E32C91B8680000F287 /* ForecastFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForecastFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5933E72C91B8680000F287 /* ForecastFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastFlowTests.swift; sourceTree = "<group>"; };
 		AD5933ED2C91B8680000F287 /* ForecastFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForecastFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5933F12C91B8680000F287 /* ForecastFlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastFlowUITests.swift; sourceTree = "<group>"; };
 		AD5933F32C91B8680000F287 /* ForecastFlowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastFlowUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AD59340D2C948A430000F287 /* Colours.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colours.xcassets; sourceTree = "<group>"; };
+		AD5934102C948A510000F287 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AD5934132C948D9B0000F287 /* run_swiftgen.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = run_swiftgen.sh; sourceTree = "<group>"; };
+		AD5934142C9494550000F287 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		AD5934162C94945B0000F287 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				AD5933D62C91B8670000F287 /* ForecastFlowApp.swift */,
+				AD5934122C948D570000F287 /* BuildPhases */,
 				AD5934042C91BBE60000F287 /* Utilities */,
 				AD5934002C91BB3C0000F287 /* Resources */,
 				AD5934062C91BC140000F287 /* Extensions */,
@@ -136,7 +146,11 @@
 		AD5934002C91BB3C0000F287 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AD5933DA2C91B8680000F287 /* Assets.xcassets */,
+				AD5933DA2C91B8680000F287 /* Images.xcassets */,
+				AD59340D2C948A430000F287 /* Colours.xcassets */,
+				AD5934142C9494550000F287 /* Strings+Generated.swift */,
+				AD5934162C94945B0000F287 /* XCAssets+Generated.swift */,
+				AD59340F2C948A510000F287 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -183,6 +197,14 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		AD5934122C948D570000F287 /* BuildPhases */ = {
+			isa = PBXGroup;
+			children = (
+				AD5934132C948D9B0000F287 /* run_swiftgen.sh */,
+			);
+			path = BuildPhases;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -193,6 +215,7 @@
 				AD5933CF2C91B8670000F287 /* Sources */,
 				AD5933D02C91B8670000F287 /* Frameworks */,
 				AD5933D12C91B8670000F287 /* Resources */,
+				AD59340C2C9489F10000F287 /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -271,6 +294,9 @@
 				Base,
 			);
 			mainGroup = AD5933CA2C91B8670000F287;
+			packageReferences = (
+				AD59340B2C9489E70000F287 /* XCRemoteSwiftPackageReference "SwiftGen" */,
+			);
 			productRefGroup = AD5933D42C91B8670000F287 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -288,7 +314,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD5933DE2C91B8680000F287 /* Preview Assets.xcassets in Resources */,
-				AD5933DB2C91B8680000F287 /* Assets.xcassets in Resources */,
+				AD5934112C948A510000F287 /* Localizable.strings in Resources */,
+				AD59340E2C948A430000F287 /* Colours.xcassets in Resources */,
+				AD5933DB2C91B8680000F287 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +336,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AD59340C2C9489F10000F287 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/ForecastFlow/BuildPhases/run_swiftgen.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AD5933CF2C91B8670000F287 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -315,6 +365,8 @@
 			files = (
 				AD5933D92C91B8670000F287 /* ContentView.swift in Sources */,
 				AD5933D72C91B8670000F287 /* ForecastFlowApp.swift in Sources */,
+				AD5934152C9494550000F287 /* Strings+Generated.swift in Sources */,
+				AD5934172C94945B0000F287 /* XCAssets+Generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +401,17 @@
 			targetProxy = AD5933EE2C91B8680000F287 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AD59340F2C948A510000F287 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD5934102C948A510000F287 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AD5933F52C91B8680000F287 /* Debug */ = {
@@ -480,6 +543,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ForecastFlow/Preview Content\"";
 				DEVELOPMENT_TEAM = SD48432CPV;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -514,6 +578,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ForecastFlow/Preview Content\"";
 				DEVELOPMENT_TEAM = SD48432CPV;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -654,6 +719,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD59340B2C9489E70000F287 /* XCRemoteSwiftPackageReference "SwiftGen" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftGen/SwiftGen";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 6.6.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = AD5933CB2C91B8670000F287 /* Project object */;
 }
