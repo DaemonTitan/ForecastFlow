@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var vm = CurrentWeatherViewModel()
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("\(vm.currentWeatherData?.main?.temp ?? 0.0)")
+            Text(vm.currentWeatherData?.name ?? "")
         }
         .padding()
+        .onAppear {
+            Task {
+                await vm.fetchCurrentWeatherData()
+            }
+        }
     }
 }
 
