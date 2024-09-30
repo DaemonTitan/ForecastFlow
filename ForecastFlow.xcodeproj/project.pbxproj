@@ -66,7 +66,6 @@
 		AD5934202C970E630000F287 /* WeatherDataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataServices.swift; sourceTree = "<group>"; };
 		AD59342A2C99B0920000F287 /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
 		AD59342C2C99B7DF0000F287 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		ADC77A372CA5293900995916 /* AppConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfig.xcconfig; sourceTree = "<group>"; };
 		ADC77A382CA529C400995916 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		ADC77A392CA52A1F00995916 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,7 +177,6 @@
 			children = (
 				ADC77A392CA52A1F00995916 /* Tools.swift */,
 				AD59342C2C99B7DF0000F287 /* NetworkManager.swift */,
-				ADC77A372CA5293900995916 /* AppConfig.xcconfig */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -496,7 +494,6 @@
 /* Begin XCBuildConfiguration section */
 		AD5933F52C91B8680000F287 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ADC77A372CA5293900995916 /* AppConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -560,7 +557,6 @@
 		};
 		AD5933F62C91B8680000F287 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ADC77A372CA5293900995916 /* AppConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
