@@ -24,6 +24,7 @@
 		AD5934212C970E630000F287 /* WeatherDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5934202C970E630000F287 /* WeatherDataServices.swift */; };
 		AD59342B2C99B0920000F287 /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD59342A2C99B0920000F287 /* CurrentWeatherViewModel.swift */; };
 		AD59342D2C99B7DF0000F287 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD59342C2C99B7DF0000F287 /* NetworkManager.swift */; };
+		ADC77A3A2CA52A1F00995916 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC77A392CA52A1F00995916 /* Tools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,9 @@
 		AD5934202C970E630000F287 /* WeatherDataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataServices.swift; sourceTree = "<group>"; };
 		AD59342A2C99B0920000F287 /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
 		AD59342C2C99B7DF0000F287 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		ADC77A372CA5293900995916 /* AppConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfig.xcconfig; sourceTree = "<group>"; };
+		ADC77A382CA529C400995916 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		ADC77A392CA52A1F00995916 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 		AD5933D52C91B8670000F287 /* ForecastFlow */ = {
 			isa = PBXGroup;
 			children = (
+				ADC77A382CA529C400995916 /* Info.plist */,
 				AD5933D62C91B8670000F287 /* ForecastFlowApp.swift */,
 				AD5934122C948D570000F287 /* BuildPhases */,
 				AD5934042C91BBE60000F287 /* Utilities */,
@@ -171,7 +176,9 @@
 		AD5934042C91BBE60000F287 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				ADC77A392CA52A1F00995916 /* Tools.swift */,
 				AD59342C2C99B7DF0000F287 /* NetworkManager.swift */,
+				ADC77A372CA5293900995916 /* AppConfig.xcconfig */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -436,6 +443,7 @@
 				AD59342D2C99B7DF0000F287 /* NetworkManager.swift in Sources */,
 				AD5934212C970E630000F287 /* WeatherDataServices.swift in Sources */,
 				AD59341D2C97095F0000F287 /* LocationManager.swift in Sources */,
+				ADC77A3A2CA52A1F00995916 /* Tools.swift in Sources */,
 				AD5934152C9494550000F287 /* Strings+Generated.swift in Sources */,
 				AD59342B2C99B0920000F287 /* CurrentWeatherViewModel.swift in Sources */,
 				AD5934172C94945B0000F287 /* XCAssets+Generated.swift in Sources */,
@@ -488,6 +496,7 @@
 /* Begin XCBuildConfiguration section */
 		AD5933F52C91B8680000F287 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADC77A372CA5293900995916 /* AppConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -551,6 +560,7 @@
 		};
 		AD5933F62C91B8680000F287 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADC77A372CA5293900995916 /* AppConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -617,6 +627,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ForecastFlow/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We requre to use your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -653,6 +665,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ForecastFlow/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We requre to use your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

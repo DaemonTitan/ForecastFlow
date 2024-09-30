@@ -13,6 +13,8 @@ class NetwordManager {
         case badURLResponse(url: URL)
         case decodingError
         case timeOut
+        case unexpectedError(Error)
+        case noInternetConnection
             
         var errorDescription: String? {
             switch self{
@@ -21,35 +23,29 @@ class NetwordManager {
             case .decodingError:
                 return "Data decoding error."
             case .timeOut:
-                return "Network timeout"
+                return "Network timeout."
+            case .unexpectedError(let error):
+                return "Unexpected error: \(error.localizedDescription)."
+            case .noInternetConnection:
+                return "No internet connection."
             }
         }
     }
     
-//    static func handleURLResponse(output: URLSession.DataTaskPublisher.Output, url: URL) throws -> Data {
-//        guard let response = output.response as? HTTPURLResponse,
-//              response.statusCode >= 200 && response.statusCode < 300 else {
-//            throw NetwordError.badURLResponse(url: url)
-//        }
-//        return output.data
-//    }
-//
-//    func fetachWeatherData(url: URL) async throws -> Data {
-//        do {
-//            let (data, response) = try await URLSession.shared.data(from: url)
-//            return try NetwordServices.handleURLResponse(output: (data, response), url: url)
-//        } catch {
-//            throw error
-//        }
-//    }
-    
-    
-    static func downloadWeatherData(from url: URL) async throws -> Data {
-        let (data, response) = try await URLSession.shared.data(from: url)
-        guard let response = response as? HTTPURLResponse,
+    static func handleURLResponse(output: URLSession.DataTaskPublisher.Output, url: URL) throws -> Data {
+        guard let response = output.response as? HTTPURLResponse,
               response.statusCode >= 200 && response.statusCode < 300 else {
             throw NetwordError.badURLResponse(url: url)
         }
-        return data
+        return output.data
+    }
+
+    static func downloadWeatherData(from url: URL) async throws -> Data {
+        do {
+            let (data, response) = try await URLSession.shared.data(from: url)
+            return try handleURLResponse(output: (data, response), url: url)
+        } catch {
+            throw error
+        }
     }
 }

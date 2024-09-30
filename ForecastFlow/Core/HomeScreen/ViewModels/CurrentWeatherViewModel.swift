@@ -17,12 +17,9 @@ class CurrentWeatherViewModel: ObservableObject {
     func fetchCurrentWeatherData() async {
         do {
             let coordinates = locationManager.fetchCoordinates()
-            self.currentWeatherData = try await weatherDataServices.decodeCurrentWeatherData(lat: coordinates.0, lon: coordinates.1, units: "metric")
+            self.currentWeatherData = try await weatherDataServices.decodeCurrentWeatherData(lat: coordinates.0, lon: coordinates.1, units: "metric", apiKey: ConfigTools.getKeys())
         } catch {
             print("Fetch current weather data error: \(error.localizedDescription)")
         }
     }
-    
-    
-    
 }
