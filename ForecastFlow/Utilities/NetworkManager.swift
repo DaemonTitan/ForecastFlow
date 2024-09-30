@@ -8,7 +8,7 @@
 import Foundation
 
 class NetwordManager {
-    
+    // Network Error
     enum NetwordError: Error {
         case badURLResponse(url: URL)
         case decodingError
