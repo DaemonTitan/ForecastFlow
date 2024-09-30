@@ -496,6 +496,7 @@
 /* Begin XCBuildConfiguration section */
 		AD5933F52C91B8680000F287 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD4987722CAA8382000E8362 /* AppConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -559,6 +560,7 @@
 		};
 		AD5933F62C91B8680000F287 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD4987722CAA8382000E8362 /* AppConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
