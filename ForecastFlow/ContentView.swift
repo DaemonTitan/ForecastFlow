@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var vm = CurrentWeatherViewModel()
+    @StateObject var vm = HomeViewModel()
     
     var body: some View {
         VStack {
@@ -18,7 +18,7 @@ struct ContentView: View {
         .padding()
         .onAppear {
             Task {
-                await vm.fetchCurrentWeatherData()
+                //await vm.fetchCurrentWeatherData()
             }
         }
     }
