@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("\(vm.currentWeatherData?.main?.temp ?? 0.0)")
+            Text("\(vm.currentWeatherData?.main.temp ?? 0.0)")
             Text(vm.currentWeatherData?.name ?? "")
         }
         .padding()

@@ -59,29 +59,25 @@ import Foundation
  */
 
 struct CurrentWeatherModel: Identifiable, Codable {
-    let coord: Coord?
-    let weather: [Weather]?
-    let main: Main?
+    let coord: Coord
+    let weather: [Weather]
+    let main: Main
     let visibility: Int?
     let wind: Wind?
     let clouds: Clouds?
     let dt: Int?
-    let sys: Sys?
-    let timezone, id: Int?
-    let name: String?
-}
-
-struct Clouds: Codable {
-    let all: Int?
+    let sys: Sys
+    let timezone, id: Int
+    let name: String
 }
 
 struct Coord: Codable {
-    let lon, lat: Double?
+    let lon, lat: Double
 }
 
 struct Main: Codable {
-    let temp, feelsLike, tempMin, tempMax: Double?
-    let pressure, humidity, seaLevel, grndLevel: Int?
+    let temp, feelsLike, tempMin, tempMax: Double
+    let pressure, humidity, seaLevel, grndLevel: Int
 
     enum CodingKeys: String, CodingKey {
         case temp
@@ -94,17 +90,21 @@ struct Main: Codable {
     }
 }
 
-struct Sys: Codable {
-    let sunrise, sunset: Int?
-}
-
 struct Weather: Codable {
-    let id: Int?
-    let main, description, icon: String?
+    let id: Int
+    let main, description, icon: String
 }
 
 struct Wind: Codable {
     let speed: Double?
     let deg: Int?
     let gust: Double?
+}
+
+struct Clouds: Codable {
+    let all: Int?
+}
+
+struct Sys: Codable {
+    let sunrise, sunset: Int
 }

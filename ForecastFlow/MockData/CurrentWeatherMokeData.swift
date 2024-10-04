@@ -20,7 +20,7 @@ class CurrentWeatherMokeData {
             id: 801,
             main: "Clouds",
             description: "few clouds",
-            icon: "02n")],
+            icon: "02d")],
         main: Main(
             temp: 15.09,
             feelsLike: 14.61,
