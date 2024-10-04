@@ -58,10 +58,9 @@ import Foundation
  }
  */
 
-struct CurrentWeatherModel: Codable {
+struct CurrentWeatherModel: Identifiable, Codable {
     let coord: Coord?
     let weather: [Weather]?
-    let base: String?
     let main: Main?
     let visibility: Int?
     let wind: Wind?
@@ -70,7 +69,6 @@ struct CurrentWeatherModel: Codable {
     let sys: Sys?
     let timezone, id: Int?
     let name: String?
-    let cod: Int?
 }
 
 struct Clouds: Codable {

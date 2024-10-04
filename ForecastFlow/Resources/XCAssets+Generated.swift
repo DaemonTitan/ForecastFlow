@@ -5,8 +5,25 @@ import SwiftUI
 
 internal extension Color {
   // Colours.xcassets
+  static var darkBlueColor : Color { Color("DarkBlueColor", bundle: BundleToken.bundle) }
+  static var royalBlueColor : Color { Color("RoyalBlueColor", bundle: BundleToken.bundle) }
+  static var darkGrayColor : Color { Color("DarkGrayColor", bundle: BundleToken.bundle) }
+  static var lightGrayColor : Color { Color("LightGrayColor", bundle: BundleToken.bundle) }
+  static var blueColor : Color { Color("BlueColor", bundle: BundleToken.bundle) }
+  static var lightBlueColor : Color { Color("LightBlueColor", bundle: BundleToken.bundle) }
+  static var darkPinkColor : Color { Color("DarkPinkColor", bundle: BundleToken.bundle) }
+  static var denimColor : Color { Color("DenimColor", bundle: BundleToken.bundle) }
+  static var orangeColor : Color { Color("OrangeColor", bundle: BundleToken.bundle) }
+  static var twilightPurpleColor : Color { Color("TwilightPurpleColor", bundle: BundleToken.bundle) }
+  static var yellowColor : Color { Color("YellowColor", bundle: BundleToken.bundle) }
+  static var blackColor : Color { Color("BlackColor", bundle: BundleToken.bundle) }
+  static var darkPurpleColor : Color { Color("DarkPurpleColor", bundle: BundleToken.bundle) }
+  static var grayColor : Color { Color("GrayColor", bundle: BundleToken.bundle) }
+  static var lightSkyBlueColor : Color { Color("LightSkyBlueColor", bundle: BundleToken.bundle) }
+  static var pinkColor : Color { Color("PinkColor", bundle: BundleToken.bundle) }
+  static var purpleColor : Color { Color("PurpleColor", bundle: BundleToken.bundle) }
+  static var whiteColor : Color { Color("WhiteColor", bundle: BundleToken.bundle) }
   // Images.xcassets
-  static var accentColor : Color { Color("AccentColor", bundle: BundleToken.bundle) }
 }
 
 internal extension Image {

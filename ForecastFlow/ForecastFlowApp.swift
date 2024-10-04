@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct ForecastFlowApp: App {
+    @StateObject private var vm = HomeViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                ContentView()
+            }
+            .environmentObject(vm)
         }
     }
 }
