@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CurrentWeatherAndTemperature: View {
-    let weatherData: CurrentWeatherModel
     @EnvironmentObject var homeVM: HomeViewModel
 
     var body: some View {
@@ -16,11 +15,12 @@ struct CurrentWeatherAndTemperature: View {
             ShowWeatherIcon()
             weatherDetails
         }
+        .padding()
     }
     
    @ViewBuilder
     func ShowWeatherIcon() -> some View {
-        let weatherIcon = weatherData.weather[0]
+        if let weatherIcon = homeVM.currentWeatherData?.weather[0] {
             switch homeVM.iconImage {
             case .SunnyIcon:
                 SunnyImage(weatherIcon.icon)
@@ -35,19 +35,20 @@ struct CurrentWeatherAndTemperature: View {
             case .Default:
                 DefaultIconImage(weatherIcon.icon)
             }
+        }
     }
 }
 
 extension CurrentWeatherAndTemperature {
     private var weatherDetails: some View {
         VStack {
-            Text("\(weatherData.main.temp.doubleToString()) ℃")
+            Text("\(homeVM.currentWeatherData?.main.temp.doubleToString() ?? "0") ℃")
                 .font(.system(size: 60,
                               weight: .medium,
                               design: .rounded))
-            Text(weatherData.weather[0].description)
+            Text(homeVM.currentWeatherData?.weather[0].description ?? "Not Avaiable")
                 .font(.title3)
-            Text("Feels like \(weatherData.main.feelsLike.doubleToString()) ℃")
+            Text("Feels like \(homeVM.currentWeatherData?.main.feelsLike.doubleToString() ?? "0") ℃")
                 .font(.title3.bold())
         }
         .foregroundStyle(Color.whiteColor)
@@ -109,8 +110,7 @@ extension CurrentWeatherAndTemperature {
 
 @available(iOS 17, *)
 #Preview(traits: .sizeThatFitsLayout) {
-    CurrentWeatherAndTemperature(weatherData: CurrentWeatherMokeData.instance.currentWeather)
+    CurrentWeatherAndTemperature()
         .preferredColorScheme(.dark)
         .environmentObject(CurrentWeatherMokeData.instance.homeVM)
-        
 }

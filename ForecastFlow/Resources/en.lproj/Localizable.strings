@@ -6,5 +6,28 @@
   
 */
 
-"Onboarding.GetStart" = "Get Start";
 "NotAvailable" = "Not available";
+
+"Degree" = "°";
+"celsius" = "℃";
+"fahrenheit" = "℉";
+"percentage" = "%%";
+"KilometresPerHour" = "km/h";
+"Hectopascal" = "hPa";
+
+"Onboarding.GetStart" = "Get Start";
+
+"CurrentWeather.ThermometerIcon" = "thermometer.sun";
+"CurrentWeather.CloudIcon" = "cloud";
+"CurrentWeather.HumidityIcon" = "humidity";
+"CurrentWeather.WindIcon" = "wind";
+"CurrentWeather.PressureBarMeterIcon" = "barometer";
+"CurrentWeather.SunriseIcon" = "sunrise";
+"CurrentWeather.SunsetIcon" = "sunset";
+"CurrentWeather.MaxMinLabel" = "Max/Min";
+"CurrentWeather.PressureLabel" = "Pressure";
+"CurrentWeather.HumidityLabel" = "Humidity";
+"CurrentWeather.WindLabel" = "Wind";
+"CurrentWeather.CloudLabel" = "Cloud";
+"CurrentWeather.SunraiseLabel" = "Sun raise";
+"CurrentWeather.SunsetLabel" = "Sun set";

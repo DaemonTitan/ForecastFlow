@@ -14,7 +14,8 @@ struct ForecastFlowApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                ContentView()
+                //ContentView()
+                HomeView()
             }
             .environmentObject(vm)
         }

@@ -19,6 +19,9 @@
 		AD49878C2CACE3F3000E8362 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD49878B2CACE3F3000E8362 /* String.swift */; };
 		AD49878E2CACE986000E8362 /* Topbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD49878D2CACE986000E8362 /* Topbar.swift */; };
 		AD4987902CAEC321000E8362 /* CurrentWeatherAndTemperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD49878F2CAEC321000E8362 /* CurrentWeatherAndTemperature.swift */; };
+		AD4987922CB02EBA000E8362 /* CurrentWeatherDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4987912CB02EBA000E8362 /* CurrentWeatherDetails.swift */; };
+		AD4987942CB02F54000E8362 /* WeatherDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4987932CB02F54000E8362 /* WeatherDetails.swift */; };
+		AD4987972CB17773000E8362 /* SunraiseSunSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4987962CB17773000E8362 /* SunraiseSunSet.swift */; };
 		AD5933D72C91B8670000F287 /* ForecastFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5933D62C91B8670000F287 /* ForecastFlowApp.swift */; };
 		AD5933D92C91B8670000F287 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5933D82C91B8670000F287 /* ContentView.swift */; };
 		AD5933DB2C91B8680000F287 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD5933DA2C91B8680000F287 /* Images.xcassets */; };
@@ -69,6 +72,9 @@
 		AD49878B2CACE3F3000E8362 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		AD49878D2CACE986000E8362 /* Topbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topbar.swift; sourceTree = "<group>"; };
 		AD49878F2CAEC321000E8362 /* CurrentWeatherAndTemperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherAndTemperature.swift; sourceTree = "<group>"; };
+		AD4987912CB02EBA000E8362 /* CurrentWeatherDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherDetails.swift; sourceTree = "<group>"; };
+		AD4987932CB02F54000E8362 /* WeatherDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetails.swift; sourceTree = "<group>"; };
+		AD4987962CB17773000E8362 /* SunraiseSunSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunraiseSunSet.swift; sourceTree = "<group>"; };
 		AD5933D32C91B8670000F287 /* ForecastFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForecastFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5933D62C91B8670000F287 /* ForecastFlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastFlowApp.swift; sourceTree = "<group>"; };
 		AD5933D82C91B8670000F287 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +124,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD4987952CB1774B000E8362 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				AD4987932CB02F54000E8362 /* WeatherDetails.swift */,
+				AD4987962CB17773000E8362 /* SunraiseSunSet.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
 		AD5933CA2C91B8670000F287 = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +279,7 @@
 		AD5934222C99B0090000F287 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AD4987952CB1774B000E8362 /* HomeView */,
 				AD4987872CAC2DC4000E8362 /* CircleButtonView.swift */,
 				AD4987892CAC2DD8000E8362 /* XMarkButton.swift */,
 			);
@@ -299,6 +315,7 @@
 				AD4987752CAABA96000E8362 /* HomeView.swift */,
 				AD49878D2CACE986000E8362 /* Topbar.swift */,
 				AD49878F2CAEC321000E8362 /* CurrentWeatherAndTemperature.swift */,
+				AD4987912CB02EBA000E8362 /* CurrentWeatherDetails.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -473,10 +490,12 @@
 				AD49878E2CACE986000E8362 /* Topbar.swift in Sources */,
 				AD5933D92C91B8670000F287 /* ContentView.swift in Sources */,
 				AD49878C2CACE3F3000E8362 /* String.swift in Sources */,
+				AD4987972CB17773000E8362 /* SunraiseSunSet.swift in Sources */,
 				AD5933D72C91B8670000F287 /* ForecastFlowApp.swift in Sources */,
 				AD4987802CAC1D08000E8362 /* Date.swift in Sources */,
 				AD4987822CAC1D38000E8362 /* Integer.swift in Sources */,
 				AD4987762CAABA96000E8362 /* HomeView.swift in Sources */,
+				AD4987922CB02EBA000E8362 /* CurrentWeatherDetails.swift in Sources */,
 				AD4987882CAC2DC4000E8362 /* CircleButtonView.swift in Sources */,
 				AD59341B2C95AC690000F287 /* CurrentWeatherData.swift in Sources */,
 				AD59341F2C970D3D0000F287 /* URLs.swift in Sources */,
@@ -489,6 +508,7 @@
 				AD5934152C9494550000F287 /* Strings+Generated.swift in Sources */,
 				AD4987782CAAC087000E8362 /* GradientBackgroundColours.swift in Sources */,
 				AD4987842CAC1E7D000E8362 /* Double.swift in Sources */,
+				AD4987942CB02F54000E8362 /* WeatherDetails.swift in Sources */,
 				AD49878A2CAC2DD8000E8362 /* XMarkButton.swift in Sources */,
 				AD59342B2C99B0920000F287 /* HomeViewModel.swift in Sources */,
 			);

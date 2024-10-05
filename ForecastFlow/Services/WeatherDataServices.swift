@@ -8,7 +8,6 @@
 import Foundation
 
 class WeatherDataServices {
-    
     var currentWeatherData: CurrentWeatherModel? = nil
     
     func decodeCurrentWeatherData(lat: Double, lon: Double, units: String, apiKey: String) async throws -> CurrentWeatherModel? {

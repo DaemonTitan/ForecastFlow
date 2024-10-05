@@ -8,5 +8,7 @@
 import Foundation
 
 extension Int {
-    
+    func intToString() -> String {
+        return String(self)
+    }
 }
