@@ -69,6 +69,10 @@ struct CurrentWeatherModel: Identifiable, Codable {
     let sys: Sys
     let timezone, id: Int
     let name: String
+    
+    var windSpeedKmh: String {
+        return wind?.speed?.convertMeterSecToKmh() ?? ""
+    }
 }
 
 struct Coord: Codable {

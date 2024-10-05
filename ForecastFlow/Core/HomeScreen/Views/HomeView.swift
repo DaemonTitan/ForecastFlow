@@ -13,10 +13,19 @@ struct HomeView: View {
     @State var isSaveLocation: Bool = false
     
     var body: some View {
-        Topbar(isSaveLocation: $isSaveLocation,
-               locationName: "\(homeVM.currentWeatherData?.name ?? "")",
-               currentDate: homeVM.displayCurrentDate())
-        Spacer()
+        VStack {
+            Topbar(isSaveLocation: $isSaveLocation,
+                   locationName: "\(homeVM.currentWeatherData?.name ?? "")",
+                   currentDate: homeVM.displayCurrentDate())
+            CurrentWeatherAndTemperature()
+            CurrentWeatherDetails()
+            Spacer()
+        }
+        .onAppear {
+            Task {
+                //await homeVM.fetchCurrentWeatherData()
+            }
+        }
     }
 }
 

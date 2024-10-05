@@ -12,7 +12,7 @@ class HomeViewModel: ObservableObject {
     private let weatherDataServices = WeatherDataServices()
     
     @Published var currentWeatherData: CurrentWeatherModel? = nil
-    @Published var iconImage: iconImages = .Default
+    @Published var iconImage: IconImages = .Default
     
     init() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
@@ -20,13 +20,20 @@ class HomeViewModel: ObservableObject {
         }
     }
     
-    enum iconImages {
+    enum IconImages {
         case SunnyIcon
         case CloudyIcon
         case RainSnowIcon
         case FogIcon
         case NightWeatherIcon
         case Default
+    }
+    
+    enum WeatherDataType {
+        case MaxAndMin
+        case Cloud
+        case Humidity
+        case Wind
     }
     
     @MainActor
@@ -75,6 +82,25 @@ extension HomeViewModel {
             return iconImage = .NightWeatherIcon
         default:
             return iconImage = .Default
+        }
+    }
+    
+    func weatherData(_ weatherDataType: String) -> String {
+        switch weatherDataType {
+            // Max/Min Temperature
+        case "Max/Min":
+            return "\(currentWeatherData?.main.tempMax.doubleToString() ?? "")\(L10n.degree)/\(currentWeatherData?.main.tempMin.doubleToString() ?? "")\(L10n.degree)"
+            // Cloud
+        case "Cloud":
+            return "\(currentWeatherData?.clouds?.all?.intToString() ?? "")\(L10n.percentage)"
+            // Humidity
+        case "Humidity":
+            return "\(currentWeatherData?.main.humidity.intToString() ?? "")\(L10n.percentage)"
+            // Wind
+        case "Wind":
+            return "\(currentWeatherData?.windSpeedKmh ?? "")\(L10n.kilometresPerHour)"
+        default:
+            return "\(L10n.notAvailable)"
         }
     }
 }
