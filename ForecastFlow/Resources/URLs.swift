@@ -15,4 +15,8 @@ struct URLs {
     static func getCurrentWeatherURL(lat: Double, lon: Double, apikey: String, units: String) -> URL? {
         return URL(string: baseURL(data: "weather") + "?lat=\(lat)&lon=\(lon)&appid=\(apikey)&units=\(units)")
     }
+    
+    static func getForecastWeatherURL(lat: Double, lon: Double, apikey: String, units: String) -> URL? {
+        return URL(string: baseURL(data: "forecast") + "?lat=\(lat)&lon=\(lon)&appid=\(apikey)&units=\(units)")
+    }
 }

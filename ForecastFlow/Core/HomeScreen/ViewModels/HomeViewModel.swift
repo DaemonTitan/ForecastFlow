@@ -12,6 +12,7 @@ class HomeViewModel: ObservableObject {
     private let weatherDataServices = WeatherDataServices()
     
     @Published var currentWeatherData: CurrentWeatherModel? = nil
+    @Published var forecastWeatherData: [ForecastWeatherData]? = []
     @Published var iconImage: IconImages = .Default
     
     init() {
@@ -47,6 +48,20 @@ class HomeViewModel: ObservableObject {
                 apiKey: ConfigTools.getKeys())
         } catch {
             print("Fetch current weather data error: \(error.localizedDescription)")
+        }
+    }
+    
+    @MainActor
+    func fetchForecastWeatherData() async {
+        do {
+            let coordinates = locationManager.fetchCoordinates()
+            self.forecastWeatherData = try await weatherDataServices.decodeForecastWeatherData(
+                lat: coordinates.0,
+                lon: coordinates.1,
+                units: "metric",
+                apiKey: ConfigTools.getKeys())
+        } catch {
+            print("Fetch forecast weather data error: \(error.localizedDescription)")
         }
     }
 }
