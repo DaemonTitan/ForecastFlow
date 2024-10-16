@@ -28,4 +28,19 @@ extension Int {
                                   with: L10n.Time.lowercasePM)
         return newDateTime
     }
+    
+    /// Convert Unix date time to local date time
+    /// ```
+    /// Convert Unix date time to
+    /// ```
+    func convertUnixTimeToLocalTime(_ dateFormat: String) -> Date? {
+        let unixDate = Date(timeIntervalSince1970: TimeInterval(self))
+        let dateTimeFormat = dateFormat
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateTimeFormat
+        dateFormatter.timeZone = TimeZone.current
+        let formattedDateString = dateFormatter.string(from: unixDate)
+        let localDateTime = dateFormatter.date(from: formattedDateString)
+        return localDateTime
+    }
 }

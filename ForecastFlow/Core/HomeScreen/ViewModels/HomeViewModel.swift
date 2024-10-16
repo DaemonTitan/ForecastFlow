@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 class HomeViewModel: ObservableObject {
     private let locationManager = LocationManager()
     private let weatherDataServices = WeatherDataServices()
     
+    @Published var backgroundColour: LinearGradient? = GradientBackgroundColours.instance.sunnyDay
     @Published var currentWeatherData: CurrentWeatherModel? = nil
     @Published var forecastWeatherData: [ForecastList] = []
     @Published var filteredDailyForecast: [ForecastList] = []
@@ -54,6 +56,7 @@ class HomeViewModel: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.currentWeatherData = WeatherMokeData.instance.currentWeather
             self.filteredDailyForecast = WeatherMokeData.instance.forecastWeather
+            self.setBackgroundColour()
         }
     }
     
@@ -103,6 +106,37 @@ class HomeViewModel: ObservableObject {
             }
             return true
         })
+    }
+    
+    func setBackgroundColour() {
+        let weatherNightIcon = currentWeatherData?.weather[0].icon.suffix(1)
+        let weatherIcon = currentWeatherData?.weather[0].icon
+        
+        guard let currentTime = fetchCurrentDateTime(format: L10n.DateFormat.dateTimeFormat).currentDateTime else { return }
+        guard let sunriseTime = currentWeatherData?.sys.sunrise.convertUnixTimeToLocalTime(L10n.DateFormat.dateTimeFormat) else { return }
+        guard let sunsetTime = currentWeatherData?.sys.sunset.convertUnixTimeToLocalTime(L10n.DateFormat.dateTimeFormat) else { return }
+         
+        
+        // Set sunrise start time and end time to 15mins before and after
+        let sunriseStartTime = sunriseTime.addingTimeInterval( -15 * 60 )
+        let sunriseEndTime = sunriseTime.addingTimeInterval( 15 * 60 )
+        // Set sunset start time and end time to 15mins before and after
+        let sunsetStartTime = sunsetTime.addingTimeInterval( -15 * 60 )
+        let sunsetEndTime = sunsetTime.addingTimeInterval( 15 * 60 )
+        
+        if weatherNightIcon == "n" {
+            backgroundColour = GradientBackgroundColours.instance.darkNight
+        } else if weatherIcon == "02d" {
+            backgroundColour = GradientBackgroundColours.instance.sunnyDay
+        } else if weatherIcon == "01d" {
+            if currentTime >= sunriseStartTime && currentTime <= sunriseEndTime {
+                backgroundColour = GradientBackgroundColours.instance.sunraise
+            } else if currentTime >= sunsetStartTime && currentTime <= sunsetEndTime {
+                backgroundColour = GradientBackgroundColours.instance.sunset
+            }
+        } else {
+            backgroundColour = GradientBackgroundColours.instance.rainyDay
+        }
     }
 }
 

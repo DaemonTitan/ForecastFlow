@@ -15,11 +15,14 @@ struct HomeView: View {
     var body: some View {
         VStack {
             Topbar(isSaveLocation: $isSaveLocation)
-            CurrentWeatherAndTemperature()
-            CurrentWeatherDetails()
-            ForecastSegment()
-            Spacer()
+            ScrollView {
+                CurrentWeatherAndTemperature()
+                CurrentWeatherDetails()
+                ForecastSegment()
+                //Spacer()
+            }
         }
+        .background(homeVM.backgroundColour.ignoresSafeArea())
         .onAppear {
             Task {
                 //await homeVM.fetchCurrentWeatherData()
@@ -30,6 +33,6 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
-        .preferredColorScheme(.dark)
+        //.preferredColorScheme(.dark)
         .environmentObject(WeatherMokeData.instance.homeVM)
 }

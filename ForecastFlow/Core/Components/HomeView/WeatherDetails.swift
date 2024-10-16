@@ -15,6 +15,7 @@ struct WeatherDetails: View {
     var body: some View {
         VStack(spacing: 6) {
             Image(systemName: image)
+                .font(.title2)
                 .foregroundStyle(Color.whiteColor)
             Text(data)
                 .font(.system(size: 16).bold())

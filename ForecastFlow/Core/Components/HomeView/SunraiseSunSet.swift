@@ -13,11 +13,9 @@ struct SunraiseSunSet: View {
     var name: String
     
     var body: some View {
-        HStack(spacing: 25) {
+        HStack(spacing: 15) {
             Image(systemName: image)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 30)
+                .font(.title3)
                 .foregroundStyle(.white)
             VStack {
                 Text(time)
