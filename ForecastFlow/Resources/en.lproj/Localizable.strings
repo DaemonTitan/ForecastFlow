@@ -15,7 +15,21 @@
 "KilometresPerHour" = "km/h";
 "Hectopascal" = "hPa";
 
-"Onboarding.GetStart" = "Get Start";
+"Time.Now" = "NOW";
+"Time.UppercaseAM" = "AM";
+"Time.UppercasePM" = "PM";
+"Time.LowercaseAM" = "am";
+"Time.LowercasePM" = "pm";
+"DateFormat.DateFormat" = "MMM d";
+"DateFormat.TimeFormat" = "h a";
+"DateFormat.sunRiseSetTimeFormat" = "hh:mm a";
+"DateFormat.DateTimeFormat" = "yyyy-MM-dd HH:mm:ss";
+"Day.Today" = "Today";
+"Day.tomorrow" = "Tomorrow";
+"Day.Next3Days" = "Next 3 Days";
+"Day.OptionList" = "OptionList";
+
+"Onboarding.timeFormat" = "Get Start";
 
 "CurrentWeather.ThermometerIcon" = "thermometer.sun";
 "CurrentWeather.CloudIcon" = "cloud";
@@ -31,3 +45,7 @@
 "CurrentWeather.CloudLabel" = "Cloud";
 "CurrentWeather.SunraiseLabel" = "Sun raise";
 "CurrentWeather.SunsetLabel" = "Sun set";
+
+"ForecastWeather.ArrowUpIcon" = "arrow.up";
+"ForecastWeather.ArrowDownIcon" = "arrow.down";
+

@@ -57,9 +57,47 @@ internal enum L10n {
     /// Wind
     internal static let windLabel = L10n.tr("Localizable", "CurrentWeather.WindLabel", fallback: "Wind")
   }
+  internal enum DateFormat {
+    /// MMM d
+    internal static let dateFormat = L10n.tr("Localizable", "DateFormat.DateFormat", fallback: "MMM d")
+    /// yyyy-MM-dd HH:mm:ss
+    internal static let dateTimeFormat = L10n.tr("Localizable", "DateFormat.DateTimeFormat", fallback: "yyyy-MM-dd HH:mm:ss")
+    /// hh:mm a
+    internal static let sunRiseSetTimeFormat = L10n.tr("Localizable", "DateFormat.sunRiseSetTimeFormat", fallback: "hh:mm a")
+    /// h a
+    internal static let timeFormat = L10n.tr("Localizable", "DateFormat.TimeFormat", fallback: "h a")
+  }
+  internal enum Day {
+    /// Next 3 Days
+    internal static let next3Days = L10n.tr("Localizable", "Day.Next3Days", fallback: "Next 3 Days")
+    /// OptionList
+    internal static let optionList = L10n.tr("Localizable", "Day.OptionList", fallback: "OptionList")
+    /// Today
+    internal static let today = L10n.tr("Localizable", "Day.Today", fallback: "Today")
+    /// Tomorrow
+    internal static let tomorrow = L10n.tr("Localizable", "Day.tomorrow", fallback: "Tomorrow")
+  }
+  internal enum ForecastWeather {
+    /// arrow.down
+    internal static let arrowDownIcon = L10n.tr("Localizable", "ForecastWeather.ArrowDownIcon", fallback: "arrow.down")
+    /// arrow.up
+    internal static let arrowUpIcon = L10n.tr("Localizable", "ForecastWeather.ArrowUpIcon", fallback: "arrow.up")
+  }
   internal enum Onboarding {
     /// Get Start
-    internal static let getStart = L10n.tr("Localizable", "Onboarding.GetStart", fallback: "Get Start")
+    internal static let timeFormat = L10n.tr("Localizable", "Onboarding.timeFormat", fallback: "Get Start")
+  }
+  internal enum Time {
+    /// am
+    internal static let lowercaseAM = L10n.tr("Localizable", "Time.LowercaseAM", fallback: "am")
+    /// pm
+    internal static let lowercasePM = L10n.tr("Localizable", "Time.LowercasePM", fallback: "pm")
+    /// NOW
+    internal static let now = L10n.tr("Localizable", "Time.Now", fallback: "NOW")
+    /// AM
+    internal static let uppercaseAM = L10n.tr("Localizable", "Time.UppercaseAM", fallback: "AM")
+    /// PM
+    internal static let uppercasePM = L10n.tr("Localizable", "Time.UppercasePM", fallback: "PM")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

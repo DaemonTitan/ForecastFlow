@@ -112,5 +112,5 @@ extension CurrentWeatherAndTemperature {
 #Preview(traits: .sizeThatFitsLayout) {
     CurrentWeatherAndTemperature()
         .preferredColorScheme(.dark)
-        .environmentObject(CurrentWeatherMokeData.instance.homeVM)
+        .environmentObject(WeatherMokeData.instance.homeVM)
 }

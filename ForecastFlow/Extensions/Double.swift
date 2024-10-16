@@ -45,19 +45,6 @@ extension Double {
         return String(number)
     }
     
-    /// Convert Unix date time
-    /// ```
-    /// Convert Unix date time to
-    /// ```
-    func unixTimeConverter(_ dateTimeFormat: String) -> String {
-        let unixDate = Date(timeIntervalSince1970: TimeInterval(self))
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = dateTimeFormat
-        var newDateTime = dateFormatter.string(from: unixDate)
-        newDateTime = newDateTime.replacingOccurrences(of: "AM", with: "am").replacingOccurrences(of: "PM", with: "pm")
-        return newDateTime
-    }
-    
     /// Convert Unix date time to local date time
     /// ```
     /// Convert Unix date time to
