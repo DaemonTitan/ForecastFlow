@@ -41,5 +41,22 @@ extension Date {
         components1.day == components2.day
     }
     
+    /// Returns date and time by given time format.
+    /// ```
+    /// Convert UTC date time ?? to local current time in "yyy-MM-dd HH:mm:ss" format
+    /// ```
+    func fetchDateTime(dateTimeFormat: String) -> String {
+        let currentCalendar = Calendar.current
+        let now = Date()
+        
+        if currentCalendar.isDate(self, equalTo: now, toGranularity: .hour) {
+            return L10n.Time.now
+        } else {
+            let format = dateTimeFormat
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = format
+            return dateFormatter.string(from: self)
+        }
+    }
 
 }

@@ -14,11 +14,10 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
-            Topbar(isSaveLocation: $isSaveLocation,
-                   locationName: "\(homeVM.currentWeatherData?.name ?? "")",
-                   currentDate: homeVM.displayCurrentDate())
+            Topbar(isSaveLocation: $isSaveLocation)
             CurrentWeatherAndTemperature()
             CurrentWeatherDetails()
+            ForecastSegment()
             Spacer()
         }
         .onAppear {
@@ -32,5 +31,5 @@ struct HomeView: View {
 #Preview {
     HomeView()
         .preferredColorScheme(.dark)
-        .environmentObject(CurrentWeatherMokeData.instance.homeVM)
+        .environmentObject(WeatherMokeData.instance.homeVM)
 }

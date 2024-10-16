@@ -1568,12 +1568,28 @@ struct ForecastList: Codable {
     let visibility: Int?
     let pop: Double?
     let sys: DayNight
+    let dtTxt: String
     let rain: Rain?
     let snow: Snow?
 
     enum CodingKeys: String, CodingKey {
         case dt, main, weather, clouds, wind, visibility, pop, sys
+        case dtTxt = "dt_txt"
         case rain, snow
+    }
+    
+    var localDateTime: Date? {
+        return dtTxt.convertUTCToLocalTime() ?? nil
+    }
+    
+    var dateForecasted: String {
+        guard let localDateTime = localDateTime else { return L10n.notAvailable }
+        return localDateTime.fetchDateTime(dateTimeFormat: L10n.DateFormat.dateFormat)
+    }
+    
+    var timeForecasted: String {
+        guard let localDateTime = localDateTime else { return L10n.notAvailable }
+        return localDateTime.fetchDateTime(dateTimeFormat: L10n.DateFormat.timeFormat)
     }
 }
 

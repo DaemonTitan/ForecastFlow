@@ -12,14 +12,9 @@ class HomeViewModel: ObservableObject {
     private let weatherDataServices = WeatherDataServices()
     
     @Published var currentWeatherData: CurrentWeatherModel? = nil
-    @Published var forecastWeatherData: [ForecastWeatherData]? = []
+    @Published var forecastWeatherData: [ForecastList] = []
+    @Published var filteredDailyForecast: [ForecastList] = []
     @Published var iconImage: IconImages = .Default
-    
-    init() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.currentWeatherData = CurrentWeatherMokeData.instance.currentWeather
-        }
-    }
     
     enum IconImages {
         case SunnyIcon
@@ -35,6 +30,31 @@ class HomeViewModel: ObservableObject {
         case Cloud
         case Humidity
         case Wind
+    }
+    
+    enum OptionList: String, CaseIterable, Identifiable {
+        var id: Self { self }
+        case today
+        case tomorrow
+        case next3Days
+        
+        var displayName: String {
+            switch self {
+            case .today:
+                return L10n.Day.today
+            case .tomorrow:
+                return L10n.Day.tomorrow
+            case .next3Days:
+                return L10n.Day.next3Days
+            }
+        }
+    }
+    
+    init() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.currentWeatherData = WeatherMokeData.instance.currentWeather
+            self.filteredDailyForecast = WeatherMokeData.instance.forecastWeather
+        }
     }
     
     @MainActor
@@ -63,6 +83,26 @@ class HomeViewModel: ObservableObject {
         } catch {
             print("Fetch forecast weather data error: \(error.localizedDescription)")
         }
+    }
+    
+    @MainActor
+    func forecastDateFilter(dateSegment: String) async {
+       filteredDailyForecast = forecastWeatherData.filter({ item in
+            guard let tomorrow = Date.tomorrow else { return true }
+            if let localDate = item.localDateTime {
+                switch dateSegment {
+                case L10n.Day.today:
+                    return isSameDay(date1: localDate, date2: Date.today)
+                case L10n.Day.tomorrow:
+                    return isSameDay(date1: localDate, date2: tomorrow)
+                case L10n.Day.next3Days:
+                    return isSameDay(date1: localDate, date2: Date.today) && isSameDay(date1: localDate, date2: tomorrow)
+                default:
+                    return true
+                }
+            }
+            return true
+        })
     }
 }
 
@@ -114,8 +154,21 @@ extension HomeViewModel {
             // Wind
         case "Wind":
             return "\(currentWeatherData?.windSpeedKmh ?? "")\(L10n.kilometresPerHour)"
+        case "Sun raise":
+            return "\(currentWeatherData?.sys.sunrise.unixTimeConverter(L10n.DateFormat.sunRiseSetTimeFormat) ?? "")"
+        case "Sun set":
+            return "\(currentWeatherData?.sys.sunset.unixTimeConverter(L10n.DateFormat.sunRiseSetTimeFormat) ?? "")"
         default:
             return "\(L10n.notAvailable)"
         }
+    }
+    
+    func isSameDay(date1: Date, date2: Date) -> Bool {
+        let calendar = Calendar.current
+        let components1 = calendar.dateComponents([.year, .month, .day], from: date1)
+        let components2 = calendar.dateComponents([.year, .month, .day], from: date2)
+        return components1.year == components2.year &&
+        components1.month == components2.month &&
+        components1.day == components2.day
     }
 }
