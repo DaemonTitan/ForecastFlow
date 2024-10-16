@@ -44,19 +44,4 @@ extension Double {
         let number = Int(self.rounded())
         return String(number)
     }
-    
-    /// Convert Unix date time to local date time
-    /// ```
-    /// Convert Unix date time to
-    /// ```
-    func convertUnixTimeToLocalTime() -> Date? {
-        let unixDate = Date(timeIntervalSince1970: TimeInterval(self))
-        let dateTimeFormat = "yyy-MM-dd HH:mm:ss"
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = dateTimeFormat
-        dateFormatter.timeZone = TimeZone.current
-        let formattedDateString = dateFormatter.string(from: unixDate)
-        let localDateTime = dateFormatter.date(from: formattedDateString)
-        return localDateTime
-    }
 }

@@ -24,7 +24,7 @@ struct ForecastWeatherDetailBox: View {
         .background(
             Rectangle()
                 .fill(.ultraThinMaterial)
-                .mask(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
                 .frame(width: 145, height: 150)
         )
         .padding(.all, 5)

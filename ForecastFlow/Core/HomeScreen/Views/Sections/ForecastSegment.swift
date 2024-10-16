@@ -17,7 +17,6 @@ struct ForecastSegment: View {
         VStack {
             dailyOption
             weatherScrollView
-
         }
         .padding(.vertical, 40)
     }
@@ -25,7 +24,7 @@ struct ForecastSegment: View {
 
 extension ForecastSegment {
     var dailyOption: some View {
-        HStack {
+        HStack() {
             ForEach(HomeViewModel.OptionList.allCases) { item in
                 ZStack {
                     Text(item.displayName)
@@ -48,7 +47,7 @@ extension ForecastSegment {
                 }
             }
         }
-        .offset(x: -25)
+        .offset(x: -30)
     }
     
     var weatherScrollView: some View {
@@ -60,7 +59,6 @@ extension ForecastSegment {
         case .next3Days:
             scrollView(dateSegment: L10n.Day.next3Days, dailyForecast: homeVM.filteredDailyForecast)
         }
-        
     }
     
     @ViewBuilder
@@ -80,7 +78,7 @@ extension ForecastSegment {
                 }
             }
             .scrollIndicators(.hidden)
-            .padding(4)
+            .padding()
             .onAppear {
                 Task {
                     await homeVM.forecastDateFilter(dateSegment: dateSegment)
@@ -94,6 +92,5 @@ extension ForecastSegment {
 #Preview(traits: .sizeThatFitsLayout) {
     ForecastSegment()
         .preferredColorScheme(.dark)
-        .padding()
         .environmentObject(WeatherMokeData.instance.homeVM)
 }

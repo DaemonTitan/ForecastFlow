@@ -11,8 +11,8 @@ struct CurrentWeatherDetails: View {
     @EnvironmentObject var homeVM: HomeViewModel
     
     var body: some View {
-        VStack(spacing: 20) {
-            HStack(alignment: .bottom , spacing: 35) {
+        VStack(spacing: 10) {
+            HStack(alignment: .bottom , spacing: 25) {
                 // Max/Min Temperature
                 WeatherDetails(image: L10n.CurrentWeather.thermometerIcon,
                                data: "\(homeVM.weatherData(L10n.CurrentWeather.maxMinLabel))",
@@ -33,7 +33,7 @@ struct CurrentWeatherDetails: View {
                                name: L10n.CurrentWeather.windLabel)
             }
             .padding(.vertical, 20)
-            HStack(spacing: 35) {
+            HStack(spacing: 25) {
                 SunraiseSunSet(image: "\(L10n.CurrentWeather.sunriseIcon)",
                                time: "\(homeVM.weatherData(L10n.CurrentWeather.sunraiseLabel))",
                                name: "\(L10n.CurrentWeather.sunraiseLabel)")
@@ -46,7 +46,7 @@ struct CurrentWeatherDetails: View {
             Rectangle()
                 .fill(.ultraThinMaterial.opacity(0.5))
                 .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                .frame(width: 380, height: 200)
+                .frame(width: 350, height: 200)
                 .offset(y: 10)
         )
     }
