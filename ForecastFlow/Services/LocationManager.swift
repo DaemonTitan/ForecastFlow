@@ -16,7 +16,7 @@ class LocationManager: NSObject, ObservableObject {
         super.init()
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
-        locationManager.requestWhenInUseAuthorization()
+        //locationManager.requestWhenInUseAuthorization()
     }
     
     func requestLocation() {
@@ -46,7 +46,8 @@ extension LocationManager: CLLocationManagerDelegate {
             manager.startUpdatingLocation()
             
         case .notDetermined:
-            manager.requestWhenInUseAuthorization()
+            //manager.requestWhenInUseAuthorization()
+            print("Not determined")
             
         case .restricted:
             print("Parent control setting disallow location data")

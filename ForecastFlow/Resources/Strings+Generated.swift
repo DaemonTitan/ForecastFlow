@@ -84,8 +84,32 @@ internal enum L10n {
     internal static let arrowUpIcon = L10n.tr("Localizable", "ForecastWeather.ArrowUpIcon", fallback: "arrow.up")
   }
   internal enum Onboarding {
+    /// chevron.left
+    internal static let chevronLeftIcon = L10n.tr("Localizable", "Onboarding.ChevronLeftIcon", fallback: "chevron.left")
+    /// chevron.right
+    internal static let chevronRightIcon = L10n.tr("Localizable", "Onboarding.ChevronRightIcon", fallback: "chevron.right")
+    /// Get Start
+    internal static let getStart = L10n.tr("Localizable", "Onboarding.GetStart", fallback: "Get Start")
     /// Get Start
     internal static let timeFormat = L10n.tr("Localizable", "Onboarding.timeFormat", fallback: "Get Start")
+    internal enum Step1 {
+      /// Get instant access to the current weather conditions in your area. Never get caught unprepared again!
+      internal static let body = L10n.tr("Localizable", "Onboarding.Step1.Body", fallback: "Get instant access to the current weather conditions in your area. Never get caught unprepared again!")
+      /// Stay Updated with Real-time Weather
+      internal static let title = L10n.tr("Localizable", "Onboarding.Step1.Title", fallback: "Stay Updated with Real-time Weather")
+    }
+    internal enum Step2 {
+      /// Looking for more than just current conditions? Stay informed about upcoming weather patterns and make informed decisions.
+      internal static let body = L10n.tr("Localizable", "Onboarding.Step2.Body", fallback: "Looking for more than just current conditions? Stay informed about upcoming weather patterns and make informed decisions.")
+      /// Plan Ahead with Weather Forecasts
+      internal static let title = L10n.tr("Localizable", "Onboarding.Step2.Title", fallback: "Plan Ahead with Weather Forecasts")
+    }
+    internal enum Step3 {
+      /// We need access to your current location! Don't worry, we prioritize your privacy and only use your location to deliver personalized weather updates.
+      internal static let body = L10n.tr("Localizable", "Onboarding.Step3.Body", fallback: "We need access to your current location! Don't worry, we prioritize your privacy and only use your location to deliver personalized weather updates.")
+      /// Access Real-time Weather Anywhere
+      internal static let title = L10n.tr("Localizable", "Onboarding.Step3.Title", fallback: "Access Real-time Weather Anywhere")
+    }
   }
   internal enum Time {
     /// am

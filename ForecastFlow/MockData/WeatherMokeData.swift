@@ -11,6 +11,7 @@ class WeatherMokeData {
     static let instance = WeatherMokeData()
     
     let homeVM = HomeViewModel()
+    let locationServices = LocationManager()
     
     let currentWeather = CurrentWeatherModel(
         coord: Coord(
