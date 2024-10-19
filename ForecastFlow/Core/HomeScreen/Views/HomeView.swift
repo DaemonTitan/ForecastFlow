@@ -9,25 +9,36 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject private var homeVM: HomeViewModel
-    
+    @EnvironmentObject private var locationServices: LocationManager
     @State var isSaveLocation: Bool = false
     
     var body: some View {
+        Group {
+            if locationServices.userLocation == nil {
+                OnboardingView()
+            } else {
+                weatherDetailView
+                    .onAppear {
+                        Task {
+                            //await homeVM.fetchCurrentWeatherData()
+                        }
+                    }
+            }
+        }
+    }
+}
+
+extension HomeView {
+    var weatherDetailView: some View {
         VStack {
             Topbar(isSaveLocation: $isSaveLocation)
             ScrollView {
                 CurrentWeatherAndTemperature()
                 CurrentWeatherDetails()
                 ForecastSegment()
-                //Spacer()
             }
         }
         .background(homeVM.backgroundColour.ignoresSafeArea())
-        .onAppear {
-            Task {
-                //await homeVM.fetchCurrentWeatherData()
-            }
-        }
     }
 }
 
@@ -35,4 +46,5 @@ struct HomeView: View {
     HomeView()
         //.preferredColorScheme(.dark)
         .environmentObject(WeatherMokeData.instance.homeVM)
+        .environmentObject(WeatherMokeData.instance.locationServices)
 }
