@@ -81,6 +81,7 @@ extension ForecastSegment {
             .padding()
             .onAppear {
                 Task {
+                    await homeVM.fetchForecastWeatherData()
                     await homeVM.forecastDateFilter(dateSegment: dateSegment)
                 }
             }

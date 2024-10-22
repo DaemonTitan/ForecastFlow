@@ -19,7 +19,7 @@ class AlertManager: ObservableObject {
         }
     }
     
-    @ViewBuilder func buttonAlert() -> some View {
+    @ViewBuilder func locationErrorAlertButton() -> some View {
         switch error {
         case .locationNotDeterminedError:
             Button(role: .cancel, action: {
@@ -47,14 +47,11 @@ class AlertManager: ObservableObject {
 
 extension View {
     
-    func showLocationErrorAlert(_ isPresent: Binding<Bool>, error: LocationErrors) -> some View {
+    func genericCustomAlert<T: CustomErrorMessages & LocalizedError>(_ isPresent: Binding<Bool>, error: T) -> some View {
         self.alert(isPresented: isPresent, error: error) { error in
-            AlertManager.instance.buttonAlert()
+            AlertManager.instance.locationErrorAlertButton()
         } message: { error in
-            Text(error.failureReason)
+            Text(error.title)
         }
     }
-    
-    
-
 }

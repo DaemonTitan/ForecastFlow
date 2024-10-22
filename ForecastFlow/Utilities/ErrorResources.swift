@@ -7,6 +7,12 @@
 
 import Foundation
 
+// MARK: Error message
+protocol CustomErrorMessages {
+    var title: String { get }
+    var subtitle: String { get }
+}
+
 // MARK: Network and Decoding Error
 enum NetwordError: Error {
     case badURLResponse(url: URL)
@@ -33,12 +39,12 @@ enum NetwordError: Error {
 
 
 // MARK: Location Access Error
-enum LocationErrors: LocalizedError {
+enum LocationErrors: LocalizedError, CustomErrorMessages {
     case locationRestrictedError
     case locationDeniedError
     case locationNotDeterminedError
     
-    var errorDescription: String? {
+    var title: String {
         switch self {
         case .locationRestrictedError:
             L10n.Error.Location.restrictedDescription
@@ -49,7 +55,18 @@ enum LocationErrors: LocalizedError {
         }
     }
         
-    var failureReason: String {
+    var subtitle: String {
+        switch self {
+        case .locationRestrictedError:
+            L10n.Error.Location.restrictedReason
+        case .locationDeniedError:
+            L10n.Error.Location.deniedReason
+        case .locationNotDeterminedError:
+            L10n.Error.Location.notDeterminedReason
+        }
+    }
+    
+    var errorDescription: String? {
         switch self {
         case .locationRestrictedError:
             L10n.Error.Location.restrictedReason
