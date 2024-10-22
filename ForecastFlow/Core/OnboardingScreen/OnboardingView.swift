@@ -69,7 +69,7 @@ extension OnboardingView {
                 currentStep = 1
             }
         }
-        .showLocationErrorAlert($showAlert, error: locationError ?? .locationNotDeterminedError)
+        .genericCustomAlert($showAlert, error: locationError ?? .locationNotDeterminedError)
 
     }
     
