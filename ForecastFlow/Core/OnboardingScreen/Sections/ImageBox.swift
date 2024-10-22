@@ -16,7 +16,7 @@ struct ImageBox: View {
         ZStack {
             RoundedRectangle(cornerRadius: 100)
                 .fill(colour)
-                .frame(height: 500)
+                .frame(height: 470)
                 .frame(maxWidth: .infinity)
                 .shadow(color: Color.grayColor, radius: 30, y: 15)
             
@@ -26,6 +26,7 @@ struct ImageBox: View {
                 }
                 .playbackMode(.playing(.toProgress(1, loopMode: .playOnce)))
                 .frame(width: 250, height: 250)
+                .offset(y: 40)
         }
         .offset(y: -80)
         .ignoresSafeArea()

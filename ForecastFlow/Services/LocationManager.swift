@@ -11,6 +11,8 @@ import CoreLocation
 class LocationManager: NSObject, ObservableObject {
     private let locationManager = CLLocationManager()
     @Published var userLocation: CLLocation?
+    @Published var locationStatus: CLAuthorizationStatus?
+    @Published var locationError: LocationErrors?
     
     override init() {
         super.init()
@@ -42,18 +44,29 @@ class LocationManager: NSObject, ObservableObject {
 extension LocationManager: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
-        case .authorizedAlways, .authorizedWhenInUse:
+        case .authorizedAlways:
+            locationStatus = .authorizedAlways
+            manager.startUpdatingLocation()
+            
+        case .authorizedWhenInUse:
+            locationStatus = .authorizedWhenInUse
             manager.startUpdatingLocation()
             
         case .notDetermined:
+            locationStatus = .notDetermined
+            locationError = LocationErrors.locationNotDeterminedError
             //manager.requestWhenInUseAuthorization()
-            print("Not determined")
+            print("Error: \(LocationErrors.locationNotDeterminedError.errorDescription ?? "Not determined")")
             
         case .restricted:
-            print("Parent control setting disallow location data")
+            locationStatus = .restricted
+            locationError = LocationErrors.locationRestrictedError
+            print("Error: \(LocationErrors.locationRestrictedError.errorDescription ?? "Parent control setting disallow location data")")
             
         case .denied:
-            print("User tap disallow on the permission dialog")
+            locationStatus = .denied
+            locationError = LocationErrors.locationDeniedError
+            print("Error: \(LocationErrors.locationDeniedError.errorDescription ?? "Disallow tapped on the permission dialog")")
         
         @unknown default:
             print("Unknow authorization status")

@@ -18,6 +18,7 @@ struct OnboardingInstructions: View {
                 .font(.title.bold())
                 .kerning(1.0)
                 .multilineTextAlignment(.center)
+                .foregroundStyle(.black)
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.horizontal)
             Text(onboardingBody)
@@ -26,7 +27,7 @@ struct OnboardingInstructions: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(height: 100)
                 .padding(.horizontal, 20)
-                .foregroundStyle(Color.gray)
+                .foregroundStyle(Color.grayColor)
                 .multilineTextAlignment(.center)
         }
         .offset(y: -100)

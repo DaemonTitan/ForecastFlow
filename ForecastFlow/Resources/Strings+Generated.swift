@@ -27,6 +27,14 @@ internal enum L10n {
   internal static let notAvailable = L10n.tr("Localizable", "NotAvailable", fallback: "Not available")
   /// %%
   internal static let percentage = L10n.tr("Localizable", "percentage", fallback: "%%")
+  internal enum Alert {
+    internal enum Button {
+      /// Dismiss
+      internal static let dismiss = L10n.tr("Localizable", "Alert.Button.Dismiss", fallback: "Dismiss")
+      /// Settings
+      internal static let settings = L10n.tr("Localizable", "Alert.Button.Settings", fallback: "Settings")
+    }
+  }
   internal enum CurrentWeather {
     /// cloud
     internal static let cloudIcon = L10n.tr("Localizable", "CurrentWeather.CloudIcon", fallback: "cloud")
@@ -76,6 +84,22 @@ internal enum L10n {
     internal static let today = L10n.tr("Localizable", "Day.Today", fallback: "Today")
     /// Tomorrow
     internal static let tomorrow = L10n.tr("Localizable", "Day.tomorrow", fallback: "Tomorrow")
+  }
+  internal enum Error {
+    internal enum Location {
+      /// Location service has been denied
+      internal static let deniedDescription = L10n.tr("Localizable", "Error.Location.DeniedDescription", fallback: "Location service has been denied")
+      /// Please go to location settings to enable location service.
+      internal static let deniedReason = L10n.tr("Localizable", "Error.Location.DeniedReason", fallback: "Please go to location settings to enable location service.")
+      /// Location access error
+      internal static let notDeterminedDescription = L10n.tr("Localizable", "Error.Location.NotDeterminedDescription", fallback: "Location access error")
+      /// App can not access location servcie, please go to location settings to enable location service.
+      internal static let notDeterminedReason = L10n.tr("Localizable", "Error.Location.NotDeterminedReason", fallback: "App can not access location servcie, please go to location settings to enable location service.")
+      /// App does not have authorise to access your location
+      internal static let restrictedDescription = L10n.tr("Localizable", "Error.Location.RestrictedDescription", fallback: "App does not have authorise to access your location")
+      /// Please change settings to allow location access.
+      internal static let restrictedReason = L10n.tr("Localizable", "Error.Location.RestrictedReason", fallback: "Please change settings to allow location access.")
+    }
   }
   internal enum ForecastWeather {
     /// arrow.down

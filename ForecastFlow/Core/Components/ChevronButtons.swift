@@ -10,6 +10,7 @@ import SwiftUI
 struct ChevronRightButton: View {
     var step: Int = 0
     var buttonAction: () -> Void
+    @EnvironmentObject var locationManager: LocationManager
     
     var body: some View {
         Button(action: {

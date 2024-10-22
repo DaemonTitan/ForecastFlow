@@ -15,6 +15,13 @@
 "KilometresPerHour" = "km/h";
 "Hectopascal" = "hPa";
 
+"Error.Location.RestrictedDescription" = "App does not have authorise to access your location";
+"Error.Location.RestrictedReason" = "Please change settings to allow location access.";
+"Error.Location.DeniedDescription" = "Location service has been denied";
+"Error.Location.DeniedReason" = "Please go to location settings to enable location service.";
+"Error.Location.NotDeterminedDescription" = "Location access error";
+"Error.Location.NotDeterminedReason" =  "App can not access location servcie, please go to location settings to enable location service.";
+
 "Time.Now" = "NOW";
 "Time.UppercaseAM" = "AM";
 "Time.UppercasePM" = "PM";
@@ -35,12 +42,13 @@
 "Onboarding.GetStart" = "Get Start";
 "Onboarding.Step1.Title" = "Stay Updated with Real-time Weather";
 "Onboarding.Step1.Body" = "Get instant access to the current weather conditions in your area. Never get caught unprepared again!";
-
 "Onboarding.Step2.Title" = "Plan Ahead with Weather Forecasts";
 "Onboarding.Step2.Body" = "Looking for more than just current conditions? Stay informed about upcoming weather patterns and make informed decisions.";
-
 "Onboarding.Step3.Title" = "Access Real-time Weather Anywhere";
 "Onboarding.Step3.Body" = "We need access to your current location! Don't worry, we prioritize your privacy and only use your location to deliver personalized weather updates.";
+
+"Alert.Button.Settings" = "Settings";
+"Alert.Button.Dismiss" = "Dismiss";
 
 "CurrentWeather.ThermometerIcon" = "thermometer.sun";
 "CurrentWeather.CloudIcon" = "cloud";

@@ -18,6 +18,7 @@ internal extension Color {
   static var yellowColor : Color { Color("YellowColor", bundle: BundleToken.bundle) }
   static var blackColor : Color { Color("BlackColor", bundle: BundleToken.bundle) }
   static var darkPurpleColor : Color { Color("DarkPurpleColor", bundle: BundleToken.bundle) }
+  static var fogGrayColor : Color { Color("FogGrayColor", bundle: BundleToken.bundle) }
   static var grayColor : Color { Color("GrayColor", bundle: BundleToken.bundle) }
   static var greenColor : Color { Color("GreenColor", bundle: BundleToken.bundle) }
   static var lightSkyBlueColor : Color { Color("LightSkyBlueColor", bundle: BundleToken.bundle) }

@@ -9,22 +9,25 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject private var homeVM: HomeViewModel
-    @EnvironmentObject private var locationServices: LocationManager
+    //@EnvironmentObject private var locationServices: LocationManager
     @State var isSaveLocation: Bool = false
     
     var body: some View {
-        Group {
-            if locationServices.userLocation == nil {
-                OnboardingView()
-            } else {
-                weatherDetailView
-                    .onAppear {
-                        Task {
-                            //await homeVM.fetchCurrentWeatherData()
-                        }
-                    }
-            }
-        }
+        weatherDetailView
+        
+        
+//        Group {
+//            if locationServices.userLocation == nil {
+//                OnboardingView()
+//            } else {
+//                weatherDetailView
+//                    .onAppear {
+//                        Task {
+//                            //await homeVM.fetchCurrentWeatherData()
+//                        }
+//                    }
+//            }
+//        }
     }
 }
 
