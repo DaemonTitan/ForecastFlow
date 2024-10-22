@@ -16,7 +16,8 @@ struct ForecastFlowApp: App {
         WindowGroup {
             NavigationStack {
                 //ContentView()
-                HomeView()
+                //HomeView()
+                OnboardingView()
             }
             .environmentObject(vm)
             .environmentObject(locationServices)

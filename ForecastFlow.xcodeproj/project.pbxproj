@@ -43,12 +43,15 @@
 		AD59342D2C99B7DF0000F287 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD59342C2C99B7DF0000F287 /* NetworkManager.swift */; };
 		AD72CB9C2CC1E2B100E5A165 /* LocationLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = AD72CB992CC1E2B100E5A165 /* LocationLottie.json */; };
 		AD72CBA12CC1E32400E5A165 /* ImageBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD72CBA02CC1E32400E5A165 /* ImageBox.swift */; };
+		ADC430752CC7BBE5000D9470 /* WeatherLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = ADC430742CC7BBE5000D9470 /* WeatherLottie.json */; };
 		ADC4BAF42CC1E520001D31AA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = ADC4BAF32CC1E520001D31AA /* Lottie */; };
 		ADC4BAF82CC1E889001D31AA /* ChevronButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC4BAF72CC1E888001D31AA /* ChevronButtons.swift */; };
 		ADC4BAFA2CC1F405001D31AA /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC4BAF92CC1F405001D31AA /* OnboardingView.swift */; };
 		ADC4BAFC2CC2039E001D31AA /* TravelLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = ADC4BAFB2CC2039E001D31AA /* TravelLottie.json */; };
 		ADC4BB012CC21820001D31AA /* OnboardingInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC4BB002CC21820001D31AA /* OnboardingInstructions.swift */; };
 		ADC4BB032CC21A08001D31AA /* PageSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC4BB022CC21A08001D31AA /* PageSteps.swift */; };
+		ADC4BB052CC5C55D001D31AA /* ErrorResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC4BB042CC5C55D001D31AA /* ErrorResources.swift */; };
+		ADC4BB0A2CC5D055001D31AA /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC4BB092CC5D055001D31AA /* AlertManager.swift */; };
 		ADC77A3A2CA52A1F00995916 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC77A392CA52A1F00995916 /* Tools.swift */; };
 /* End PBXBuildFile section */
 
@@ -111,11 +114,14 @@
 		AD59342C2C99B7DF0000F287 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AD72CB992CC1E2B100E5A165 /* LocationLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationLottie.json; sourceTree = "<group>"; };
 		AD72CBA02CC1E32400E5A165 /* ImageBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBox.swift; sourceTree = "<group>"; };
+		ADC430742CC7BBE5000D9470 /* WeatherLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WeatherLottie.json; sourceTree = "<group>"; };
 		ADC4BAF72CC1E888001D31AA /* ChevronButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChevronButtons.swift; sourceTree = "<group>"; };
 		ADC4BAF92CC1F405001D31AA /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		ADC4BAFB2CC2039E001D31AA /* TravelLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TravelLottie.json; sourceTree = "<group>"; };
 		ADC4BB002CC21820001D31AA /* OnboardingInstructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInstructions.swift; sourceTree = "<group>"; };
 		ADC4BB022CC21A08001D31AA /* PageSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSteps.swift; sourceTree = "<group>"; };
+		ADC4BB042CC5C55D001D31AA /* ErrorResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResources.swift; sourceTree = "<group>"; };
+		ADC4BB092CC5D055001D31AA /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		ADC77A382CA529C400995916 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		ADC77A392CA52A1F00995916 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,6 +240,7 @@
 		AD5934002C91BB3C0000F287 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ADC430742CC7BBE5000D9470 /* WeatherLottie.json */,
 				AD72CB992CC1E2B100E5A165 /* LocationLottie.json */,
 				ADC4BAFB2CC2039E001D31AA /* TravelLottie.json */,
 				AD5933DA2C91B8680000F287 /* Images.xcassets */,
@@ -253,6 +260,8 @@
 				ADC77A392CA52A1F00995916 /* Tools.swift */,
 				AD59342C2C99B7DF0000F287 /* NetworkManager.swift */,
 				AD4987722CAA8382000E8362 /* AppConfig.xcconfig */,
+				ADC4BB042CC5C55D001D31AA /* ErrorResources.swift */,
+				ADC4BB092CC5D055001D31AA /* AlertManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -489,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD72CB9C2CC1E2B100E5A165 /* LocationLottie.json in Resources */,
+				ADC430752CC7BBE5000D9470 /* WeatherLottie.json in Resources */,
 				AD5933DE2C91B8680000F287 /* Preview Assets.xcassets in Resources */,
 				ADC4BAFC2CC2039E001D31AA /* TravelLottie.json in Resources */,
 				AD5934112C948A510000F287 /* Localizable.strings in Resources */,
@@ -552,11 +562,13 @@
 				AD4987822CAC1D38000E8362 /* Integer.swift in Sources */,
 				AD4987762CAABA96000E8362 /* HomeView.swift in Sources */,
 				AD4987922CB02EBA000E8362 /* CurrentWeatherDetails.swift in Sources */,
+				ADC4BB0A2CC5D055001D31AA /* AlertManager.swift in Sources */,
 				AD4987882CAC2DC4000E8362 /* CircleButtonView.swift in Sources */,
 				AD4987992CB3F073000E8362 /* ForecastWeatherData.swift in Sources */,
 				AD59341B2C95AC690000F287 /* CurrentWeatherData.swift in Sources */,
 				ADC4BB012CC21820001D31AA /* OnboardingInstructions.swift in Sources */,
 				AD59341F2C970D3D0000F287 /* URLs.swift in Sources */,
+				ADC4BB052CC5C55D001D31AA /* ErrorResources.swift in Sources */,
 				ADC4BB032CC21A08001D31AA /* PageSteps.swift in Sources */,
 				AD4987A02CB69F3F000E8362 /* WeatherDetailBox.swift in Sources */,
 				AD4987902CAEC321000E8362 /* CurrentWeatherAndTemperature.swift in Sources */,
