@@ -69,11 +69,11 @@ enum LocationErrors: LocalizedError, CustomErrorMessages {
     var errorDescription: String? {
         switch self {
         case .locationRestrictedError:
-            L10n.Error.Location.restrictedReason
+            L10n.Error.Location.notDeterminedDescription
         case .locationDeniedError:
-            L10n.Error.Location.deniedReason
+            L10n.Error.Location.notDeterminedDescription
         case .locationNotDeterminedError:
-            L10n.Error.Location.notDeterminedReason
+            L10n.Error.Location.notDeterminedDescription
         }
     }
 }

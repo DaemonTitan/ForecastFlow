@@ -53,7 +53,7 @@ import Foundation
    },
    "timezone": 36000,
    "id": 0,
-   "name": "",
+   "name": "Sydney",
    "cod": 200
  }
  */

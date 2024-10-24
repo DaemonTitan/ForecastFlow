@@ -44,14 +44,3 @@ class AlertManager: ObservableObject {
         }
     }
 }
-
-extension View {
-    
-    func genericCustomAlert<T: CustomErrorMessages & LocalizedError>(_ isPresent: Binding<Bool>, error: T) -> some View {
-        self.alert(isPresented: isPresent, error: error) { error in
-            AlertManager.instance.locationErrorAlertButton()
-        } message: { error in
-            Text(error.title)
-        }
-    }
-}
