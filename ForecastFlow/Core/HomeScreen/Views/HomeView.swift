@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject private var homeVM: HomeViewModel
     @State var isSaveLocation: Bool = false
+    @State var showSheet: Bool = false
     
     var body: some View {
         weatherDetailView
@@ -24,7 +25,7 @@ struct HomeView: View {
 extension HomeView {
     var weatherDetailView: some View {
         VStack {
-            Topbar(isSaveLocation: $isSaveLocation)
+            Topbar(isSaveLocation: $isSaveLocation, showSheet: $showSheet)
             ScrollView {
                 CurrentWeatherAndTemperature()
                 CurrentWeatherDetails()

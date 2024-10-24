@@ -107,6 +107,14 @@ internal enum L10n {
     /// arrow.up
     internal static let arrowUpIcon = L10n.tr("Localizable", "ForecastWeather.ArrowUpIcon", fallback: "arrow.up")
   }
+  internal enum LoadingProgress {
+    /// Loading weather data....
+    internal static let loadingWeather = L10n.tr("Localizable", "LoadingProgress.LoadingWeather", fallback: "Loading weather data....")
+  }
+  internal enum LocationSearch {
+    /// Today
+    internal static let title = L10n.tr("Localizable", "LocationSearch.Title", fallback: "Today")
+  }
   internal enum Onboarding {
     /// chevron.left
     internal static let chevronLeftIcon = L10n.tr("Localizable", "Onboarding.ChevronLeftIcon", fallback: "chevron.left")

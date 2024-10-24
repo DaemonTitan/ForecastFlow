@@ -11,33 +11,39 @@ struct Topbar: View {
     
     @EnvironmentObject var homeVM: HomeViewModel
     @Binding var isSaveLocation: Bool
+    @Binding var showSheet: Bool
     
     var body: some View {
         HStack {
-            firstCircleButton()
+            leftCircleButton()
             Spacer()
             locationAndDate
             Spacer()
-            secondCircleButton()
+            rightCircleButton()
         }
         .padding(.horizontal)
     }
     
     @ViewBuilder
-    private func firstCircleButton() -> some View {
+    private func leftCircleButton() -> some View {
         if isSaveLocation {
             CircleButtonView(imageName: "plus")
         } else {
             CircleButtonView(imageName: "magnifyingglass")
+                .tapAnimate {
+                    showSheet.toggle()
+                }
+                .fullScreenCover(isPresented: $showSheet, content: LocationSearchView.init)
         }
     }
     
     @ViewBuilder
-    private func secondCircleButton() -> some View {
+    private func rightCircleButton() -> some View {
         if isSaveLocation {
             XMarkButton()
         } else {
             CircleButtonView(imageName: "slider.horizontal.3")
+                .tapAnimate()
         }
     }
 }
@@ -65,7 +71,7 @@ extension Topbar {
 
 @available(iOS 17, *)
 #Preview(traits: .sizeThatFitsLayout) {
-    Topbar(isSaveLocation: .constant(false))
+    Topbar(isSaveLocation: .constant(false), showSheet: .constant(false))
         .preferredColorScheme(.dark)
         .environmentObject(WeatherMokeData.instance.homeVM)
 }

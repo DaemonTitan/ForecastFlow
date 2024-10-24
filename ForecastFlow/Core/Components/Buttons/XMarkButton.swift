@@ -9,9 +9,13 @@ import SwiftUI
 
 struct XMarkButton: View {
     @Environment(\.dismiss) private var close
+    @State var animateImage: Bool = false
     
     var body: some View {
         CircleButtonView(imageName: "xmark")
+            .tapAnimate {
+                close()
+            }
     }
 }
 

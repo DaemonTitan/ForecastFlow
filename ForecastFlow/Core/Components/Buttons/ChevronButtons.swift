@@ -11,10 +11,17 @@ struct ChevronRightButton: View {
     var step: Int = 0
     var buttonAction: () -> Void
     @EnvironmentObject var locationManager: LocationManager
+    @State private var animate: Bool = false
     
     var body: some View {
         Button(action: {
             buttonAction()
+            animate.toggle()
+            withAnimation(.spring(response: 0.3,
+                                  dampingFraction: 0.2,
+                                  blendDuration: 0.1)) {
+                animate.toggle()
+            }
         }, label: {
             UnevenRoundedRectangle(cornerRadii: .init(
                 topLeading: 30,
@@ -25,7 +32,7 @@ struct ChevronRightButton: View {
             .foregroundStyle(Color.orangeColor)
             .frame(width: 100, height: 55)
             .overlay {
-                if step == 3 {
+                if step == 3 && locationManager.userLocation != nil {
                     Text(L10n.Onboarding.getStart)
                         .font(.headline.bold())
                         .foregroundStyle(Color.whiteColor)
@@ -36,15 +43,23 @@ struct ChevronRightButton: View {
                 }
             }
         })
+        .scaleEffect(animate ? 1.3 : 1.0)
     }
 }
 
 struct ChevronLeftButton: View {
     var buttonAction: () -> Void
+    @State private var animate: Bool = false
     
     var body: some View {
         Button(action: {
             buttonAction()
+            animate.toggle()
+            withAnimation(.spring(response: 0.3,
+                                  dampingFraction: 0.2,
+                                  blendDuration: 0.1)) {
+                animate.toggle()
+            }
         }, label: {
             UnevenRoundedRectangle(cornerRadii: .init(
                 topLeading: 0,
@@ -60,6 +75,7 @@ struct ChevronLeftButton: View {
                     .foregroundStyle(Color.whiteColor)
             }
         })
+        .scaleEffect(animate ? 1.3 : 1.0)
     }
 }
 
