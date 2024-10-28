@@ -59,6 +59,10 @@
 		ADDE07912CC8902300770CE7 /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDE07902CC8902300770CE7 /* LocationSearchView.swift */; };
 		ADDE079C2CC920DA00770CE7 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDE079B2CC920DA00770CE7 /* View.swift */; };
 		ADDE07A32CCA19A100770CE7 /* ButtonTapAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDE07A22CCA19A100770CE7 /* ButtonTapAnimation.swift */; };
+		ADDE07A52CCA596500770CE7 /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDE07A42CCA596500770CE7 /* LocationSearchViewModel.swift */; };
+		ADDE07A72CCB169B00770CE7 /* UtilityEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDE07A62CCB169B00770CE7 /* UtilityEnums.swift */; };
+		ADDE07A92CCB17CC00770CE7 /* LocationSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDE07A82CCB17CC00770CE7 /* LocationSearchManager.swift */; };
+		ADDE07AB2CCB2E7200770CE7 /* CityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDE07AA2CCB2E7200770CE7 /* CityData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +140,10 @@
 		ADDE07902CC8902300770CE7 /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		ADDE079B2CC920DA00770CE7 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		ADDE07A22CCA19A100770CE7 /* ButtonTapAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTapAnimation.swift; sourceTree = "<group>"; };
+		ADDE07A42CCA596500770CE7 /* LocationSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModel.swift; sourceTree = "<group>"; };
+		ADDE07A62CCB169B00770CE7 /* UtilityEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityEnums.swift; sourceTree = "<group>"; };
+		ADDE07A82CCB17CC00770CE7 /* LocationSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchManager.swift; sourceTree = "<group>"; };
+		ADDE07AA2CCB2E7200770CE7 /* CityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +282,7 @@
 				AD4987722CAA8382000E8362 /* AppConfig.xcconfig */,
 				ADC4BB042CC5C55D001D31AA /* ErrorResources.swift */,
 				ADC4BB092CC5D055001D31AA /* AlertManager.swift */,
+				ADDE07A62CCB169B00770CE7 /* UtilityEnums.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -283,6 +292,7 @@
 			children = (
 				AD5934202C970E630000F287 /* WeatherDataServices.swift */,
 				AD59341C2C97095F0000F287 /* LocationManager.swift */,
+				ADDE07A82CCB17CC00770CE7 /* LocationSearchManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -312,6 +322,7 @@
 			children = (
 				AD59341A2C95AC690000F287 /* CurrentWeatherData.swift */,
 				AD4987982CB3F073000E8362 /* ForecastWeatherData.swift */,
+				ADDE07AA2CCB2E7200770CE7 /* CityData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -420,6 +431,7 @@
 		ADDE07872CC874BC00770CE7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				ADDE07A42CCA596500770CE7 /* LocationSearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -612,6 +624,7 @@
 				AD5933D72C91B8670000F287 /* ForecastFlowApp.swift in Sources */,
 				AD4987802CAC1D08000E8362 /* Date.swift in Sources */,
 				AD4987822CAC1D38000E8362 /* Integer.swift in Sources */,
+				ADDE07AB2CCB2E7200770CE7 /* CityData.swift in Sources */,
 				AD4987762CAABA96000E8362 /* HomeView.swift in Sources */,
 				AD4987922CB02EBA000E8362 /* CurrentWeatherDetails.swift in Sources */,
 				ADC4BB0A2CC5D055001D31AA /* AlertManager.swift in Sources */,
@@ -627,6 +640,8 @@
 				AD4987742CAAB67A000E8362 /* WeatherMokeData.swift in Sources */,
 				AD59342D2C99B7DF0000F287 /* NetworkManager.swift in Sources */,
 				ADDE07912CC8902300770CE7 /* LocationSearchView.swift in Sources */,
+				ADDE07A72CCB169B00770CE7 /* UtilityEnums.swift in Sources */,
+				ADDE07A92CCB17CC00770CE7 /* LocationSearchManager.swift in Sources */,
 				ADDE078B2CC8766500770CE7 /* LoadingPregressView.swift in Sources */,
 				ADC4BAFA2CC1F405001D31AA /* OnboardingView.swift in Sources */,
 				AD5934212C970E630000F287 /* WeatherDataServices.swift in Sources */,
@@ -639,6 +654,7 @@
 				AD4987842CAC1E7D000E8362 /* Double.swift in Sources */,
 				AD4987942CB02F54000E8362 /* WeatherDetails.swift in Sources */,
 				AD49878A2CAC2DD8000E8362 /* XMarkButton.swift in Sources */,
+				ADDE07A52CCA596500770CE7 /* LocationSearchViewModel.swift in Sources */,
 				ADDE07892CC8758300770CE7 /* TrapezoidShape.swift in Sources */,
 				AD59342B2C99B0920000F287 /* HomeViewModel.swift in Sources */,
 			);

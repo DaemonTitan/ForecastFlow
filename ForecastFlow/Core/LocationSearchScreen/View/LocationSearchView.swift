@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct LocationSearchView: View {
+    @StateObject var locationSearchManager = LocationSearchManager()
+    @StateObject var locationSearchVM = LocationSearchViewModel()
+    
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(1...100, id: \.self) { item in
-                    Text("\(item)")
+            List(locationSearchManager.searchResult) { cityName in
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(cityName.title)
+                        Text(cityName.subtitle)
+                    }
+                    Spacer()
+                }
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    
                 }
             }
             .background(Color.fogGrayColor.ignoresSafeArea())
@@ -21,6 +32,16 @@ struct LocationSearchView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     XMarkButton()
+                }
+            }
+            .searchable(text: $locationSearchVM.queryText,
+                        placement: .navigationBarDrawer(displayMode: .always),
+                        prompt: L10n.LocationSearch.searchBarText)
+            .onChange(of: locationSearchVM.debounceText) { text in
+                if !locationSearchVM.debounceText.isEmpty {
+                    locationSearchManager.searchCity(for: text)
+                } else {
+                    locationSearchManager.searchResult = []
                 }
             }
         }

@@ -71,5 +71,8 @@
 "ForecastWeather.ArrowDownIcon" = "arrow.down";
 
 "LocationSearch.Title" = "Today";
-
+"LocationSearch.StreetFilter.Street" = "St";
+"LocationSearch.StreetFilter.Road" = "Rd";
+"LocationSearch.StreetFilter.Avenue" = "Ave";
+"LocationSearch.SearchBarText" = "Search for a city";
 

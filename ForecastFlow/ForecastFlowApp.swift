@@ -11,6 +11,8 @@ import SwiftUI
 struct ForecastFlowApp: App {
     @StateObject private var vm = HomeViewModel()
     @StateObject private var locationServices = LocationManager()
+//    @StateObject private var locationSearchVM = LocationSearchViewModel()
+//    @StateObject private var locationSearchManager = LocationSearchManager()
     
     var body: some Scene {
         WindowGroup {
@@ -21,6 +23,8 @@ struct ForecastFlowApp: App {
             }
             .environmentObject(vm)
             .environmentObject(locationServices)
+//            .environmentObject(locationSearchVM)
+//            .environmentObject(locationSearchManager)
         }
     }
 }
