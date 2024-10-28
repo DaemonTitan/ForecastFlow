@@ -112,8 +112,18 @@ internal enum L10n {
     internal static let loadingWeather = L10n.tr("Localizable", "LoadingProgress.LoadingWeather", fallback: "Loading weather data....")
   }
   internal enum LocationSearch {
+    /// Search for a city
+    internal static let searchBarText = L10n.tr("Localizable", "LocationSearch.SearchBarText", fallback: "Search for a city")
     /// Today
     internal static let title = L10n.tr("Localizable", "LocationSearch.Title", fallback: "Today")
+    internal enum StreetFilter {
+      /// Ave
+      internal static let avenue = L10n.tr("Localizable", "LocationSearch.StreetFilter.Avenue", fallback: "Ave")
+      /// Rd
+      internal static let road = L10n.tr("Localizable", "LocationSearch.StreetFilter.Road", fallback: "Rd")
+      /// St
+      internal static let street = L10n.tr("Localizable", "LocationSearch.StreetFilter.Street", fallback: "St")
+    }
   }
   internal enum Onboarding {
     /// chevron.left
