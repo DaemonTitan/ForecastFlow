@@ -10,7 +10,7 @@ import Foundation
 // Current Weather JSON Response
 /*
  URL:
- https://api.openweathermap.org/data/2.5/weather?lat=33.6912985&lon=151.1502491&appid=ac641c216f7d0d0abae797bade643f8c
+ https://api.openweathermap.org/data/2.5/weather?lat=33.6912985&lon=151.1502491&appid=
  
  JSON Response:
  {
@@ -69,9 +69,29 @@ struct CurrentWeatherModel: Identifiable, Codable {
     let sys: Sys
     let timezone, id: Int
     let name: String
+    let cityName: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case coord
+        case weather
+        case main
+        case visibility
+        case wind
+        case clouds
+        case dt
+        case sys
+        case timezone
+        case id
+        case name
+        case cityName
+    }
     
     var windSpeedKmh: String {
         return wind?.speed?.convertMeterSecToKmh() ?? ""
+    }
+    
+    func updateWeatherData(cityName: String) -> CurrentWeatherModel {
+        return CurrentWeatherModel(coord: coord, weather: weather, main: main, visibility: visibility, wind: wind, clouds: clouds, dt: dt, sys: sys, timezone: timezone, id: id, name: name, cityName: cityName)
     }
 }
 

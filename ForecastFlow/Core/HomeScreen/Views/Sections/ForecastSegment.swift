@@ -12,6 +12,9 @@ struct ForecastSegment: View {
     @Namespace var days
     @EnvironmentObject var homeVM: HomeViewModel
     @State var daysOption = HomeViewModel.OptionList.today
+    @Binding var isSaveLocation: Bool
+    
+    var forcastList: [ForecastList]
     
     var body: some View {
         VStack {
@@ -53,11 +56,11 @@ extension ForecastSegment {
     var weatherScrollView: some View {
         switch daysOption {
         case .today:
-            scrollView(dateSegment: L10n.Day.today, dailyForecast: homeVM.filteredDailyForecast)
+            scrollView(dateSegment: L10n.Day.today, dailyForecast: forcastList)
         case .tomorrow:
-            scrollView(dateSegment: L10n.Day.tomorrow, dailyForecast: homeVM.filteredDailyForecast)
+            scrollView(dateSegment: L10n.Day.tomorrow, dailyForecast: forcastList)
         case .next3Days:
-            scrollView(dateSegment: L10n.Day.next3Days, dailyForecast: homeVM.filteredDailyForecast)
+            scrollView(dateSegment: L10n.Day.next3Days, dailyForecast: forcastList)
         }
     }
     
@@ -80,18 +83,25 @@ extension ForecastSegment {
             .scrollIndicators(.hidden)
             .padding()
             .onAppear {
-                Task {
-                    await homeVM.fetchForecastWeatherData()
-                    await homeVM.forecastDateFilter(dateSegment: dateSegment)
+                if !isSaveLocation {
+                    Task {
+                        await homeVM.forecastDateFilter(dateSegment: dateSegment)
+                        //await homeVM.fetchForecastWeatherData()
+                    }
+                } else {
+                    Task {
+                        
+                    }
                 }
+                
+
             }
     }
 }
 
-
 @available(iOS 17, *)
 #Preview(traits: .sizeThatFitsLayout) {
-    ForecastSegment()
+    ForecastSegment(isSaveLocation: .constant(false), forcastList: WeatherMokeData.instance.forecastWeather)
         .preferredColorScheme(.dark)
         .environmentObject(WeatherMokeData.instance.homeVM)
 }

@@ -57,7 +57,7 @@ extension OnboardingView {
             if currentStep <= totalSteps {
                 if currentStep == 3 {
                     locationManger.requestLocation()
-                    if locationManger.userLocation != nil {
+                    if locationManger.locationCoodinates != nil {
                         currentStep += 1
                     } else if locationManger.locationStatus == .denied {
                         showAlert.toggle()

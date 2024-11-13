@@ -43,6 +43,7 @@ extension CurrentWeatherView {
             Text("\(homeVM.displayCurrentDate())")
                 .font(.system(size: 18))
                 .foregroundStyle(Color.whiteColor)
+            Text("time")
         }
         .offset(y: -20)
         .padding()

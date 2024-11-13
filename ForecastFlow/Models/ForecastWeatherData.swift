@@ -10,7 +10,7 @@ import Foundation
 // Forecase Weather Response
 /*
  URL:
- https://api.openweathermap.org/data/2.5/forecast?lat=33.6912985&lon=151.1502491&appid=37065c28e102f58c0f901251287511bf&units=metric
+ https://api.openweathermap.org/data/2.5/forecast?lat=33.6912985&lon=151.1502491&appid=&units=metric
  
  JSON Response:
  {

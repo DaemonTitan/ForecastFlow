@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct LocationSearchView: View {
+    @EnvironmentObject private var homeVM: HomeViewModel
     @StateObject var locationSearchManager = LocationSearchManager()
     @StateObject var locationSearchVM = LocationSearchViewModel()
+    @State var showSheet: Bool = false
+    @State var isSaveLocation: Bool = true
     
     var body: some View {
         NavigationStack {
@@ -23,7 +26,10 @@ struct LocationSearchView: View {
                 }
                 .contentShape(Rectangle())
                 .onTapGesture {
-                    
+                    showSheet.toggle()
+                    Task {
+                        await locationSearchVM.fetchSearchResults(cityDetail: cityName)
+                    }
                 }
             }
             .background(Color.fogGrayColor.ignoresSafeArea())
@@ -44,10 +50,56 @@ struct LocationSearchView: View {
                     locationSearchManager.searchResult = []
                 }
             }
+            .sheet(isPresented: $showSheet) {
+                weatherDetailView
+            }
         }
+    }
+}
+
+extension LocationSearchView {
+    
+    var weatherDetailView: some View {
+        VStack {
+            topbar
+            ScrollView {
+                weatherTemperature
+                weatherDetail
+                forecastSegment
+            }
+        }
+        .background(homeVM.backgroundColour.ignoresSafeArea())
+    }
+    
+    var topbar: some View {
+        Topbar(isSaveLocation: $isSaveLocation,
+               showSheet: $showSheet,
+               cityName: locationSearchVM.selectedCityCurrentWeather?.cityName ?? "",
+               date: homeVM.displayCurrentDate())
+    }
+    
+    var weatherTemperature: some View {
+        CurrentWeatherAndTemperature(weatherIcon: locationSearchVM.selectedCityCurrentWeather?.weather[0].icon ?? "",
+                                     temp: locationSearchVM.selectedCityCurrentWeather?.main.temp.doubleToString() ?? "",
+                                     weatherName: locationSearchVM.selectedCityCurrentWeather?.weather[0].description ?? "Not Avaiable",
+                                     feelsLike: locationSearchVM.selectedCityCurrentWeather?.main.feelsLike.doubleToString() ?? "")
+    }
+    
+    var weatherDetail: some View {
+        CurrentWeatherDetails(maxMinTemp: locationSearchVM.weatherData(L10n.CurrentWeather.maxMinLabel),
+                              cloud: locationSearchVM.weatherData(L10n.CurrentWeather.cloudLabel),
+                              humidity: locationSearchVM.weatherData(L10n.CurrentWeather.humidityLabel),
+                              wind: locationSearchVM.weatherData(L10n.CurrentWeather.windLabel),
+                              sunraise: locationSearchVM.weatherData(L10n.CurrentWeather.sunraiseLabel),
+                              sunset: locationSearchVM.weatherData(L10n.CurrentWeather.sunsetLabel))
+    }
+    
+    var forecastSegment: some View {
+        ForecastSegment(isSaveLocation: $showSheet, forcastList: locationSearchVM.selectedCityforecastWeather)
     }
 }
 
 #Preview {
     LocationSearchView()
+        .environmentObject(WeatherMokeData.instance.homeVM)
 }
