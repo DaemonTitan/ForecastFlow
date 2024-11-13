@@ -9,6 +9,10 @@ import SwiftUI
 
 struct CurrentWeatherAndTemperature: View {
     @EnvironmentObject var homeVM: HomeViewModel
+    var weatherIcon: String
+    var temp: String
+    var weatherName: String
+    var feelsLike: String
 
     var body: some View {
         HStack {
@@ -20,21 +24,19 @@ struct CurrentWeatherAndTemperature: View {
     
    @ViewBuilder
     func ShowWeatherIcon() -> some View {
-        if let weatherIcon = homeVM.currentWeatherData?.weather[0] {
-            switch homeVM.iconImage {
-            case .SunnyIcon:
-                SunnyImage(weatherIcon.icon)
-            case .CloudyIcon:
-                CloudyImage(weatherIcon.icon)
-            case .RainSnowIcon:
-                RainSnowImage(weatherIcon.icon)
-            case .FogIcon:
-                FogImage(weatherIcon.icon)
-            case .NightWeatherIcon:
-                NightWeatherImage(weatherIcon.icon)
-            case .Default:
-                DefaultIconImage(weatherIcon.icon)
-            }
+        switch homeVM.iconImage {
+        case .SunnyIcon:
+            SunnyImage(weatherIcon)
+        case .CloudyIcon:
+            CloudyImage(weatherIcon)
+        case .RainSnowIcon:
+            RainSnowImage(weatherIcon)
+        case .FogIcon:
+            FogImage(weatherIcon)
+        case .NightWeatherIcon:
+            NightWeatherImage(weatherIcon)
+        case .Default:
+            DefaultIconImage(weatherIcon)
         }
     }
 }
@@ -42,13 +44,13 @@ struct CurrentWeatherAndTemperature: View {
 extension CurrentWeatherAndTemperature {
     private var weatherDetails: some View {
         VStack {
-            Text("\(homeVM.currentWeatherData?.main.temp.doubleToString() ?? "0") ℃")
+            Text("\(temp) ℃")
                 .font(.system(size: 60,
                               weight: .medium,
                               design: .rounded))
-            Text(homeVM.currentWeatherData?.weather[0].description ?? "Not Avaiable")
+            Text(weatherName)
                 .font(.title3)
-            Text("Feels like \(homeVM.currentWeatherData?.main.feelsLike.doubleToString() ?? "0") ℃")
+            Text("Feels like \(feelsLike) ℃")
                 .font(.title3.bold())
         }
         .foregroundStyle(Color.whiteColor)
@@ -110,7 +112,7 @@ extension CurrentWeatherAndTemperature {
 
 @available(iOS 17, *)
 #Preview(traits: .sizeThatFitsLayout) {
-    CurrentWeatherAndTemperature()
+    CurrentWeatherAndTemperature(weatherIcon: "01d", temp: "15 °C", weatherName: "Sunny", feelsLike: "Feels Like 15 °C")
         .preferredColorScheme(.dark)
         .environmentObject(WeatherMokeData.instance.homeVM)
 }

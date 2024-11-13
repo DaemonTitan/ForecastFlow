@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct Topbar: View {
-    
-    @EnvironmentObject var homeVM: HomeViewModel
     @Binding var isSaveLocation: Bool
     @Binding var showSheet: Bool
+    
+    var cityName: String
+    var date: String
     
     var body: some View {
         HStack {
@@ -27,9 +28,9 @@ struct Topbar: View {
     @ViewBuilder
     private func leftCircleButton() -> some View {
         if isSaveLocation {
-            CircleButtonView(imageName: "plus")
+            CircleButtonView(imageName: L10n.CurrentWeather.plusIcon)
         } else {
-            CircleButtonView(imageName: "magnifyingglass")
+            CircleButtonView(imageName: L10n.CurrentWeather.magnifyingGlassIcon)
                 .tapAnimate {
                     showSheet.toggle()
                 }
@@ -56,13 +57,13 @@ extension Topbar {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 20, height: 20)
-                Text("\(homeVM.currentWeatherData?.name ?? "")")
+                Text(cityName)
                     .font(.headline.bold())
                     .multilineTextAlignment(.center)
                     .foregroundStyle(Color.whiteColor)
             }
             .padding(.horizontal, -10)
-            Text(homeVM.displayCurrentDate())
+            Text(date)
                 .font(.body)
                 .foregroundStyle(Color.whiteColor)
         }
@@ -71,7 +72,8 @@ extension Topbar {
 
 @available(iOS 17, *)
 #Preview(traits: .sizeThatFitsLayout) {
-    Topbar(isSaveLocation: .constant(false), showSheet: .constant(false))
+    Topbar(isSaveLocation: .constant(false),
+           showSheet: .constant(false),
+           cityName: "Sydney", date: "Monday, Nov 11")
         .preferredColorScheme(.dark)
-        .environmentObject(WeatherMokeData.instance.homeVM)
 }

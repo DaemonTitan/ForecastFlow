@@ -52,6 +52,9 @@
 "Alert.Button.Settings" = "Settings";
 "Alert.Button.Dismiss" = "Dismiss";
 
+"CurrentWeather.PlusIcon" = "plus";
+"CurrentWeather.MagnifyingGlassIcon" = "magnifyingglass";
+"CurrentWeather.LocationIcon" = "location";
 "CurrentWeather.ThermometerIcon" = "thermometer.sun";
 "CurrentWeather.CloudIcon" = "cloud";
 "CurrentWeather.HumidityIcon" = "humidity";
@@ -64,8 +67,8 @@
 "CurrentWeather.HumidityLabel" = "Humidity";
 "CurrentWeather.WindLabel" = "Wind";
 "CurrentWeather.CloudLabel" = "Cloud";
-"CurrentWeather.SunraiseLabel" = "Sun raise";
-"CurrentWeather.SunsetLabel" = "Sun set";
+"CurrentWeather.SunraiseLabel" = "Sunraise";
+"CurrentWeather.SunsetLabel" = "Sunset";
 
 "ForecastWeather.ArrowUpIcon" = "arrow.up";
 "ForecastWeather.ArrowDownIcon" = "arrow.down";

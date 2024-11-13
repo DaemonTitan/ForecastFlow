@@ -44,20 +44,26 @@ internal enum L10n {
     internal static let humidityIcon = L10n.tr("Localizable", "CurrentWeather.HumidityIcon", fallback: "humidity")
     /// Humidity
     internal static let humidityLabel = L10n.tr("Localizable", "CurrentWeather.HumidityLabel", fallback: "Humidity")
+    /// location
+    internal static let locationIcon = L10n.tr("Localizable", "CurrentWeather.LocationIcon", fallback: "location")
+    /// magnifyingglass
+    internal static let magnifyingGlassIcon = L10n.tr("Localizable", "CurrentWeather.MagnifyingGlassIcon", fallback: "magnifyingglass")
     /// Max/Min
     internal static let maxMinLabel = L10n.tr("Localizable", "CurrentWeather.MaxMinLabel", fallback: "Max/Min")
+    /// plus
+    internal static let plusIcon = L10n.tr("Localizable", "CurrentWeather.PlusIcon", fallback: "plus")
     /// barometer
     internal static let pressureBarMeterIcon = L10n.tr("Localizable", "CurrentWeather.PressureBarMeterIcon", fallback: "barometer")
     /// Pressure
     internal static let pressureLabel = L10n.tr("Localizable", "CurrentWeather.PressureLabel", fallback: "Pressure")
-    /// Sun raise
-    internal static let sunraiseLabel = L10n.tr("Localizable", "CurrentWeather.SunraiseLabel", fallback: "Sun raise")
+    /// Sunraise
+    internal static let sunraiseLabel = L10n.tr("Localizable", "CurrentWeather.SunraiseLabel", fallback: "Sunraise")
     /// sunrise
     internal static let sunriseIcon = L10n.tr("Localizable", "CurrentWeather.SunriseIcon", fallback: "sunrise")
     /// sunset
     internal static let sunsetIcon = L10n.tr("Localizable", "CurrentWeather.SunsetIcon", fallback: "sunset")
-    /// Sun set
-    internal static let sunsetLabel = L10n.tr("Localizable", "CurrentWeather.SunsetLabel", fallback: "Sun set")
+    /// Sunset
+    internal static let sunsetLabel = L10n.tr("Localizable", "CurrentWeather.SunsetLabel", fallback: "Sunset")
     /// thermometer.sun
     internal static let thermometerIcon = L10n.tr("Localizable", "CurrentWeather.ThermometerIcon", fallback: "thermometer.sun")
     /// wind

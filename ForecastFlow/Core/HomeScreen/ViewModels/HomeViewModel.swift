@@ -63,12 +63,14 @@ class HomeViewModel: ObservableObject {
     @MainActor
     func fetchCurrentWeatherData() async {
         do {
-            let coordinates = locationManager.fetchCoordinates()
+            let coordinates = await locationManager.fetchCoordinates()
+            let cityName = try await locationManager.fetchLocationName(latitude: coordinates.0, longitude: coordinates.1)
             self.currentWeatherData = try await weatherDataServices.decodeCurrentWeatherData(
                 lat: coordinates.0,
                 lon: coordinates.1,
                 units: "metric",
-                apiKey: ConfigTools.getKeys())
+                apiKey: ConfigTools.getKeys(),
+                locationName: cityName ?? "")
         } catch {
             print("Fetch current weather data error: \(error.localizedDescription)")
         }
@@ -77,7 +79,7 @@ class HomeViewModel: ObservableObject {
     @MainActor
     func fetchForecastWeatherData() async {
         do {
-            let coordinates = locationManager.fetchCoordinates()
+            let coordinates = await locationManager.fetchCoordinates()
             self.forecastWeatherData = try await weatherDataServices.decodeForecastWeatherData(
                 lat: coordinates.0,
                 lon: coordinates.1,
@@ -188,9 +190,9 @@ extension HomeViewModel {
             // Wind
         case "Wind":
             return "\(currentWeatherData?.windSpeedKmh ?? "")\(L10n.kilometresPerHour)"
-        case "Sun raise":
+        case "Sunraise":
             return "\(currentWeatherData?.sys.sunrise.unixTimeConverter(L10n.DateFormat.sunRiseSetTimeFormat) ?? "")"
-        case "Sun set":
+        case "Sunset":
             return "\(currentWeatherData?.sys.sunset.unixTimeConverter(L10n.DateFormat.sunRiseSetTimeFormat) ?? "")"
         default:
             return "\(L10n.notAvailable)"

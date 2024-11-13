@@ -32,7 +32,7 @@ struct ChevronRightButton: View {
             .foregroundStyle(Color.orangeColor)
             .frame(width: 100, height: 55)
             .overlay {
-                if step == 3 && locationManager.userLocation != nil {
+                if step == 3 && locationManager.locationCoodinates != nil {
                     Text(L10n.Onboarding.getStart)
                         .font(.headline.bold())
                         .foregroundStyle(Color.whiteColor)
