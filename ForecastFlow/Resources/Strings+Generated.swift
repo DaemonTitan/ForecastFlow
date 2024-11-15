@@ -72,8 +72,8 @@ internal enum L10n {
     internal static let windLabel = L10n.tr("Localizable", "CurrentWeather.WindLabel", fallback: "Wind")
   }
   internal enum DateFormat {
-    /// MMM d
-    internal static let dateFormat = L10n.tr("Localizable", "DateFormat.DateFormat", fallback: "MMM d")
+    /// EEEE, MMM d
+    internal static let dateFormat = L10n.tr("Localizable", "DateFormat.DateFormat", fallback: "EEEE, MMM d")
     /// yyyy-MM-dd HH:mm:ss
     internal static let dateTimeFormat = L10n.tr("Localizable", "DateFormat.DateTimeFormat", fallback: "yyyy-MM-dd HH:mm:ss")
     /// hh:mm a

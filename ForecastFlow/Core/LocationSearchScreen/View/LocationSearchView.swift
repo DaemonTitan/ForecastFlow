@@ -28,7 +28,7 @@ struct LocationSearchView: View {
                 .onTapGesture {
                     showSheet.toggle()
                     Task {
-                        await locationSearchVM.fetchSearchResults(cityDetail: cityName)
+                        //await locationSearchVM.fetchSearchResults(cityDetail: cityName)
                     }
                 }
             }
@@ -68,14 +68,14 @@ extension LocationSearchView {
                 forecastSegment
             }
         }
-        .background(homeVM.backgroundColour.ignoresSafeArea())
+        .background(locationSearchVM.backgroundColour.ignoresSafeArea())
     }
     
     var topbar: some View {
         Topbar(isSaveLocation: $isSaveLocation,
                showSheet: $showSheet,
                cityName: locationSearchVM.selectedCityCurrentWeather?.cityName ?? "",
-               date: homeVM.displayCurrentDate())
+               date: homeVM.displayCurrentDate)
     }
     
     var weatherTemperature: some View {
@@ -86,12 +86,12 @@ extension LocationSearchView {
     }
     
     var weatherDetail: some View {
-        CurrentWeatherDetails(maxMinTemp: locationSearchVM.weatherData(L10n.CurrentWeather.maxMinLabel),
-                              cloud: locationSearchVM.weatherData(L10n.CurrentWeather.cloudLabel),
-                              humidity: locationSearchVM.weatherData(L10n.CurrentWeather.humidityLabel),
-                              wind: locationSearchVM.weatherData(L10n.CurrentWeather.windLabel),
-                              sunraise: locationSearchVM.weatherData(L10n.CurrentWeather.sunraiseLabel),
-                              sunset: locationSearchVM.weatherData(L10n.CurrentWeather.sunsetLabel))
+        CurrentWeatherDetails(maxMinTemp: locationSearchVM.weatherDetail(L10n.CurrentWeather.maxMinLabel),
+                              cloud: locationSearchVM.weatherDetail(L10n.CurrentWeather.cloudLabel),
+                              humidity: locationSearchVM.weatherDetail(L10n.CurrentWeather.humidityLabel),
+                              wind: locationSearchVM.weatherDetail(L10n.CurrentWeather.windLabel),
+                              sunraise: locationSearchVM.weatherDetail(L10n.CurrentWeather.sunraiseLabel),
+                              sunset: locationSearchVM.weatherDetail(L10n.CurrentWeather.sunsetLabel))
     }
     
     var forecastSegment: some View {

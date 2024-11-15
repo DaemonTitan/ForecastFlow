@@ -40,7 +40,7 @@ extension CurrentWeatherView {
                 .font(.system(size: 25))
                 .foregroundStyle(Color.whiteColor)
                 .padding(.vertical, 2)
-            Text("\(homeVM.displayCurrentDate())")
+            Text("\(homeVM.displayCurrentDate)")
                 .font(.system(size: 18))
                 .foregroundStyle(Color.whiteColor)
             Text("time")
