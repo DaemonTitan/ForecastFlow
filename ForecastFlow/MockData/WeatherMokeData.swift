@@ -21,7 +21,7 @@ class WeatherMokeData {
             id: 801,
             main: "Clouds",
             description: "few clouds",
-            icon: "01d")],
+            icon: "09d")],
         main: Main(
             temp: 15.09,
             feelsLike: 14.61,
@@ -55,7 +55,7 @@ class WeatherMokeData {
             id: 800,
             main: "Clear",
             description: "clear sky",
-            icon: "01d")],
+            icon: "08d")],
         main: Main(
             temp: 31.13,
             feelsLike: 29.46,
@@ -104,7 +104,7 @@ class WeatherMokeData {
             visibility: 10000,
             pop: 0.62,
             sys: DayNight(pod: "n"),
-            dtTxt: "2024-10-16 03:00:00",
+            dtTxt: "2024-11-13 03:00:00",
             rain: Rain(rain3H: 12.5),
             snow: Snow(snow3H: 0.0)),
                
@@ -130,7 +130,7 @@ class WeatherMokeData {
                    visibility: 10000,
                    pop: 0.62,
                    sys: DayNight(pod: "n"),
-                   dtTxt: "2024-10-17 04:00:00",
+                   dtTxt: "2024-11-14 04:00:00",
                    rain: Rain(rain3H: 12.5),
                    snow: Snow(snow3H: 0.0)),
                
@@ -156,7 +156,7 @@ class WeatherMokeData {
                    visibility: 10000,
                    pop: 0.62,
                    sys: DayNight(pod: "n"),
-                   dtTxt: "2024-10-18 06:00:00",
+                   dtTxt: "2024-11-15 06:00:00",
                    rain: Rain(rain3H: 12.5),
                    snow: Snow(snow3H: 0.0)),
         ]

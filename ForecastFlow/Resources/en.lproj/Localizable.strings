@@ -33,6 +33,7 @@
 "DateFormat.TimeFormat" = "h a";
 "DateFormat.sunRiseSetTimeFormat" = "hh:mm a";
 "DateFormat.DateTimeFormat" = "yyyy-MM-dd HH:mm:ss";
+"DateFormat.DateFormat" = "EEEE, MMM d";
 "Day.Today" = "Today";
 "Day.tomorrow" = "Tomorrow";
 "Day.Next3Days" = "Next 3 Days";

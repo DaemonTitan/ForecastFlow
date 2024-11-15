@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import MapKit
+import SwiftUI
 
 @MainActor
 class LocationSearchViewModel: ObservableObject {
@@ -16,6 +17,7 @@ class LocationSearchViewModel: ObservableObject {
     @Published var searchResult: [CityData] = []
     @Published var selectedCityCurrentWeather: CurrentWeatherModel? = nil
     @Published var selectedCityforecastWeather: [ForecastList] = []
+    @Published var backgroundColour: LinearGradient? = GradientBackgroundColours.instance.sunnyDay
     
     private var homeVM = HomeViewModel()
     private var locationSearchManager = LocationSearchManager()
@@ -26,9 +28,9 @@ class LocationSearchViewModel: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.selectedCityCurrentWeather = WeatherMokeData.instance.selectedCityCurrentWeather
             self.selectedCityforecastWeather = WeatherMokeData.instance.selectedCityForecastWeather
+            self.showBackgroundColour()
         }
-        
-        searchResultDebounce()
+        self.searchResultDebounce()
     }
     
     func searchResultDebounce(dueTime: TimeInterval = 0.8) {
@@ -41,36 +43,6 @@ class LocationSearchViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func weatherData(_ weatherDataType: String) -> String {
-        switch weatherDataType {
-            // Max/Min Temperature
-        case "Max/Min":
-            return "\(selectedCityCurrentWeather?.main.tempMax.doubleToString() ?? "")\(L10n.degree)/\(selectedCityCurrentWeather?.main.tempMin.doubleToString() ?? "")\(L10n.degree)"
-            // Cloud
-        case "Cloud":
-            return "\(selectedCityCurrentWeather?.clouds?.all?.intToString() ?? "")\(L10n.percentage)"
-            // Humidity
-        case "Humidity":
-            return "\(selectedCityCurrentWeather?.main.humidity.intToString() ?? "")\(L10n.percentage)"
-            // Wind
-        case "Wind":
-            return "\(selectedCityCurrentWeather?.windSpeedKmh ?? "")\(L10n.kilometresPerHour)"
-        case "Sunraise":
-            return "\(selectedCityCurrentWeather?.sys.sunrise.unixTimeConverter(L10n.DateFormat.sunRiseSetTimeFormat) ?? "")"
-        case "Sunset":
-            return "\(selectedCityCurrentWeather?.sys.sunset.unixTimeConverter(L10n.DateFormat.sunRiseSetTimeFormat) ?? "")"
-        default:
-            return "\(L10n.notAvailable)"
-        }
-    }
-    
-    func clearSelectedCity() {
-//        DispatchQueue.main.async {
-//            self.selectedCity = nil
-//        }
-        self.searchResult = []
-    }
-    
     func fetchLocationWeatherData(cityName: CityData) async {
         do {
             self.selectedCityCurrentWeather = try await weatherDataServices.decodeCurrentWeatherData(
@@ -80,7 +52,7 @@ class LocationSearchViewModel: ObservableObject {
                 apiKey: ConfigTools.getKeys(),
                 locationName: cityName.city)
         } catch {
-            print("Fetch current weather error: \(error.localizedDescription)")
+            print("Fetch selected location current weather error: \(error.localizedDescription)")
         }
     }
     
@@ -92,8 +64,23 @@ class LocationSearchViewModel: ObservableObject {
                 units: "metric",
                 apiKey: ConfigTools.getKeys())
         } catch {
-            print("Fetch forecast weather data error: \(error.localizedDescription)")
+            print("Fetch selected location forecast weather data error: \(error.localizedDescription)")
         }
+    }
+    
+    func weatherDetail(_ weatherDataType: String) -> String {
+        return Tools.weatherData(weatherDataType: weatherDataType, weatherData: selectedCityCurrentWeather)
+    }
+    
+    func showBackgroundColour() {
+        self.backgroundColour = Tools.setBackgroundColour(weatherData: selectedCityCurrentWeather)
+    }
+    
+    func clearSelectedCity() {
+//        DispatchQueue.main.async {
+//            self.selectedCity = nil
+//        }
+        self.searchResult = []
     }
     
     func fetchSearchResults(cityDetail: CityData) async {

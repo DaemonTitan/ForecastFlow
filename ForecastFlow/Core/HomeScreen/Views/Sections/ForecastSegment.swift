@@ -11,7 +11,7 @@ struct ForecastSegment: View {
     
     @Namespace var days
     @EnvironmentObject var homeVM: HomeViewModel
-    @State var daysOption = HomeViewModel.OptionList.today
+    @State var daysOption = OptionList.today
     @Binding var isSaveLocation: Bool
     
     var forcastList: [ForecastList]
@@ -28,7 +28,7 @@ struct ForecastSegment: View {
 extension ForecastSegment {
     var dailyOption: some View {
         HStack() {
-            ForEach(HomeViewModel.OptionList.allCases) { item in
+            ForEach(OptionList.allCases) { item in
                 ZStack {
                     Text(item.displayName)
                         .font(.headline)

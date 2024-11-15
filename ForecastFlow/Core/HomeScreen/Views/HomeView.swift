@@ -36,7 +36,7 @@ extension HomeView {
         Topbar(isSaveLocation: $isSaveLocation,
                showSheet: $showSheet,
                cityName: homeVM.currentWeatherData?.cityName ?? "",
-               date: homeVM.displayCurrentDate())
+               date: homeVM.displayCurrentDate)
     }
     
     var weatherTemperature: some View {
@@ -47,16 +47,16 @@ extension HomeView {
     }
     
     var weatherDetails: some View {
-        CurrentWeatherDetails(maxMinTemp: homeVM.weatherData(L10n.CurrentWeather.maxMinLabel),
-                              cloud: homeVM.weatherData(L10n.CurrentWeather.cloudLabel),
-                              humidity: homeVM.weatherData(L10n.CurrentWeather.humidityLabel),
-                              wind: homeVM.weatherData(L10n.CurrentWeather.windLabel),
-                              sunraise: homeVM.weatherData(L10n.CurrentWeather.sunraiseLabel),
-                              sunset: homeVM.weatherData(L10n.CurrentWeather.sunsetLabel))
+        CurrentWeatherDetails(maxMinTemp: homeVM.weatherDetail(L10n.CurrentWeather.maxMinLabel),
+                              cloud: homeVM.weatherDetail(L10n.CurrentWeather.cloudLabel),
+                              humidity: homeVM.weatherDetail(L10n.CurrentWeather.humidityLabel),
+                              wind: homeVM.weatherDetail(L10n.CurrentWeather.windLabel),
+                              sunraise: homeVM.weatherDetail(L10n.CurrentWeather.sunraiseLabel),
+                              sunset: homeVM.weatherDetail(L10n.CurrentWeather.sunsetLabel))
     }
     
     var forecastSegment: some View {
-        ForecastSegment(isSaveLocation: $showSheet ,forcastList: homeVM.forecastWeatherData)
+        ForecastSegment(isSaveLocation: $showSheet ,forcastList: homeVM.filteredDailyForecast)
     }
     
 }
