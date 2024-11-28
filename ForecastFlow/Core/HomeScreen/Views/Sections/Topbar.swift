@@ -10,6 +10,8 @@ import SwiftUI
 struct Topbar: View {
     @Binding var isSaveLocation: Bool
     @Binding var showSheet: Bool
+    @Environment(\.dismiss) private var close
+    @State var saveData: () -> Void = {}
     
     var cityName: String
     var date: String
@@ -29,6 +31,10 @@ struct Topbar: View {
     private func leftCircleButton() -> some View {
         if isSaveLocation {
             CircleButtonView(imageName: L10n.CurrentWeather.plusIcon)
+                .tapAnimate {
+                    saveData()
+                    close()
+                }
         } else {
             CircleButtonView(imageName: L10n.CurrentWeather.magnifyingGlassIcon)
                 .tapAnimate {

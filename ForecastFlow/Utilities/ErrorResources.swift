@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: Error message
+// MARK: Error messages
 protocol CustomErrorMessages {
     var title: String { get }
     var subtitle: String { get }
@@ -38,7 +38,7 @@ enum NetwordError: Error {
 }
 
 
-// MARK: Location Access Error
+// MARK: Location Access Errors
 enum LocationErrors: LocalizedError, CustomErrorMessages {
     case locationRestrictedError
     case locationDeniedError
@@ -74,6 +74,60 @@ enum LocationErrors: LocalizedError, CustomErrorMessages {
             L10n.Error.Location.notDeterminedDescription
         case .locationNotDeterminedError:
             L10n.Error.Location.notDeterminedDescription
+        }
+    }
+}
+
+// MARK: Core Data Errors
+enum CoreDataErrors: LocalizedError, CustomErrorMessages {
+    case coreDataLoadingError
+    case coreDataSaveError
+    case coreDataDeleteError
+    case coreDataFetchError
+    case dataAlreadySaveError(cityName: String)
+    
+    var title: String {
+        switch self {
+        case .coreDataLoadingError:
+            L10n.Error.CoreData.loadCoreDataDescription
+        case .coreDataSaveError:
+            L10n.Error.CoreData.saveDescription
+        case .coreDataDeleteError:
+            L10n.Error.CoreData.deleteDescription
+        case .coreDataFetchError:
+            L10n.Error.CoreData.fetchDescription
+        case .dataAlreadySaveError:
+            L10n.Error.CoreData.alreadySavedDescription
+        }
+    }
+    
+    var subtitle: String {
+        switch self {
+        case .coreDataLoadingError:
+            L10n.Error.CoreData.loadCoreDataReason
+        case .coreDataSaveError:
+            L10n.Error.CoreData.saveReason
+        case .coreDataDeleteError:
+            L10n.Error.CoreData.deleteReason
+        case .coreDataFetchError:
+            L10n.Error.CoreData.fetchReason
+        case .dataAlreadySaveError(let cityName):
+            L10n.Error.CoreData.alreadySavedReason(cityName)
+        }
+    }
+    
+    var errorDescription: String? {
+        switch self {
+        case .coreDataLoadingError:
+            L10n.Error.CoreData.loadCoreDataDescription
+        case .coreDataSaveError:
+            L10n.Error.CoreData.saveDescription
+        case .coreDataDeleteError:
+            L10n.Error.CoreData.deleteDescription
+        case .coreDataFetchError:
+            L10n.Error.CoreData.fetchDescription
+        case .dataAlreadySaveError:
+            L10n.Error.CoreData.alreadySavedDescription
         }
     }
 }
