@@ -14,6 +14,8 @@ internal enum L10n {
   internal static let celsius = L10n.tr("Localizable", "celsius", fallback: "℃")
   /// °
   internal static let degree = L10n.tr("Localizable", "Degree", fallback: "°")
+  /// Error
+  internal static let error = L10n.tr("Localizable", "Error", fallback: "Error")
   /// ℉
   internal static let fahrenheit = L10n.tr("Localizable", "fahrenheit", fallback: "℉")
   /// hPa
@@ -92,6 +94,30 @@ internal enum L10n {
     internal static let tomorrow = L10n.tr("Localizable", "Day.tomorrow", fallback: "Tomorrow")
   }
   internal enum Error {
+    internal enum CoreData {
+      /// Duplicate Entry
+      internal static let alreadySavedDescription = L10n.tr("Localizable", "Error.CoreData.AlreadySavedDescription", fallback: "Duplicate Entry")
+      /// The selected city %@ is already saved in the list
+      internal static func alreadySavedReason(_ p1: Any) -> String {
+        return L10n.tr("Localizable", "Error.CoreData.AlreadySavedReason", String(describing: p1), fallback: "The selected city %@ is already saved in the list")
+      }
+      /// Delete Failed
+      internal static let deleteDescription = L10n.tr("Localizable", "Error.CoreData.DeleteDescription", fallback: "Delete Failed")
+      /// The selected data could not be deleted due to an unexpected error. Please try again.
+      internal static let deleteReason = L10n.tr("Localizable", "Error.CoreData.DeleteReason", fallback: "The selected data could not be deleted due to an unexpected error. Please try again.")
+      /// Unable to Fetch Data
+      internal static let fetchDescription = L10n.tr("Localizable", "Error.CoreData.FetchDescription", fallback: "Unable to Fetch Data")
+      /// Something went wrong while loading the data. Please try again.
+      internal static let fetchReason = L10n.tr("Localizable", "Error.CoreData.FetchReason", fallback: "Something went wrong while loading the data. Please try again.")
+      /// Unable to Load Data
+      internal static let loadCoreDataDescription = L10n.tr("Localizable", "Error.CoreData.LoadCoreDataDescription", fallback: "Unable to Load Data")
+      /// The data could not be loaded due to an unexpected error. Please try again.
+      internal static let loadCoreDataReason = L10n.tr("Localizable", "Error.CoreData.LoadCoreDataReason", fallback: "The data could not be loaded due to an unexpected error. Please try again.")
+      /// Save Error
+      internal static let saveDescription = L10n.tr("Localizable", "Error.CoreData.SaveDescription", fallback: "Save Error")
+      /// An error occurred while trying to save your data. Please try again.
+      internal static let saveReason = L10n.tr("Localizable", "Error.CoreData.SaveReason", fallback: "An error occurred while trying to save your data. Please try again.")
+    }
     internal enum Location {
       /// Location service has been denied
       internal static let deniedDescription = L10n.tr("Localizable", "Error.Location.DeniedDescription", fallback: "Location service has been denied")

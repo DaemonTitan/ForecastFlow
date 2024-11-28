@@ -15,12 +15,28 @@
 "KilometresPerHour" = "km/h";
 "Hectopascal" = "hPa";
 
+"Error" = "Error";
 "Error.Location.RestrictedDescription" = "App does not have authorise to access your location";
 "Error.Location.RestrictedReason" = "Please change settings to allow location access.";
 "Error.Location.DeniedDescription" = "Location service has been denied";
 "Error.Location.DeniedReason" = "Please go to location settings to enable location service.";
 "Error.Location.NotDeterminedDescription" = "Location access error";
 "Error.Location.NotDeterminedReason" =  "App can not access location servcie, please go to location settings to enable location service.";
+
+"Error.CoreData.LoadCoreDataDescription" = "Unable to Load Data";
+"Error.CoreData.LoadCoreDataReason" = "The data could not be loaded due to an unexpected error. Please try again.";
+
+"Error.CoreData.SaveDescription" = "Save Error";
+"Error.CoreData.SaveReason" = "An error occurred while trying to save your data. Please try again.";
+
+"Error.CoreData.DeleteDescription" = "Delete Failed";
+"Error.CoreData.DeleteReason" = "The selected data could not be deleted due to an unexpected error. Please try again.";
+
+"Error.CoreData.FetchDescription" = "Unable to Fetch Data";
+"Error.CoreData.FetchReason" = "Something went wrong while loading the data. Please try again.";
+
+"Error.CoreData.AlreadySavedDescription" = "Duplicate Entry";
+"Error.CoreData.AlreadySavedReason" = "The selected city %@ is already saved in the list";
 
 "LoadingProgress.LoadingWeather" = "Loading weather data....";
 

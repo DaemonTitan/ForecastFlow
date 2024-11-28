@@ -11,8 +11,9 @@ struct LocationSearchView: View {
     @EnvironmentObject private var homeVM: HomeViewModel
     @StateObject var locationSearchManager = LocationSearchManager()
     @StateObject var locationSearchVM = LocationSearchViewModel()
-    @State var showSheet: Bool = false
-    @State var isSaveLocation: Bool = true
+    @State private var showSheet: Bool = false
+    @State private var showAlert: Bool = false
+    @State private var isSaveLocation: Bool = true
     
     var body: some View {
         NavigationStack {
@@ -53,11 +54,32 @@ struct LocationSearchView: View {
             .sheet(isPresented: $showSheet) {
                 weatherDetailView
             }
+            .overlay {
+                showList()
+            }
         }
     }
 }
 
 extension LocationSearchView {
+    
+    @ViewBuilder
+    func showList() -> some View {
+        if !DataManager.instance.savedCities.isEmpty && locationSearchVM.debounceText.isEmpty {
+            List {
+                ForEach(DataManager.instance.savedCities) { entity in
+                        VStack {
+                            Text(entity.cityName ?? "")
+                            Text("\(entity.latitude)")
+                            Text("\(entity.longitude)")
+                        }
+                    }
+                .onDelete(perform: DataManager.instance.deleteCityData)
+              }
+        } else if DataManager.instance.savedCities.isEmpty && locationSearchVM.debounceText.isEmpty {
+            Text("No saved cities")
+        }
+    }
     
     var weatherDetailView: some View {
         VStack {
@@ -74,6 +96,7 @@ extension LocationSearchView {
     var topbar: some View {
         Topbar(isSaveLocation: $isSaveLocation,
                showSheet: $showSheet,
+               saveData: locationSearchVM.saveSelectedCity,
                cityName: locationSearchVM.selectedCityCurrentWeather?.cityName ?? "",
                date: homeVM.displayCurrentDate)
     }

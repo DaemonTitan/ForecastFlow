@@ -17,6 +17,16 @@ extension View {
         }
     }
     
+    func coreDataErrorAlert(_ isPresent: Binding<Bool>, error: CoreDataErrors) -> some View {
+        self.alert(isPresented: isPresent, error: error) { error in
+            Button(action: {}, label: {
+                Text(L10n.Alert.Button.dismiss)
+            })
+        } message: { error in
+            Text(error.subtitle)
+        }
+    }
+    
     func tapAnimate(additionalAction: (() -> Void)? = nil) -> some View {
         self.modifier(ButtonTapAnimation(additionalAction: additionalAction))
     }

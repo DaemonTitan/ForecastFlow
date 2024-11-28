@@ -246,6 +246,7 @@ class WeatherMokeData {
         CityData(title: "Sydney", subtitle: "NSW Australia", city: "", state: "NSW", country: "Australia", latitude: 0.0, longitude: 0.0),
         CityData(title: "Melbroune", subtitle: "Vic Australia", city: "", state: "Victory", country: "Australia", latitude: 0.0, longitude: 0.0),
         CityData(title: "Hobart", subtitle: "Tas Australia", city: "", state: "Tasmania", country: "Australia", latitude: 0.0, longitude: 0.0),
-        CityData(title: "Brisbane", subtitle: "Queensland Australia", city: "", state: "Queensland", country: "Australia", latitude: 0.0, longitude: 0.0)
+        CityData(title: "Brisbane", subtitle: "Queensland Australia", city: "", state: "Queensland", country: "Australia", latitude: 0.0, longitude: 0.0),
+        CityData(title: "Perth", subtitle: "West Australia", city: "", state: "West Australia", country: "Australia", latitude: -31.959242, longitude: 115.8672597)
     ]
 }

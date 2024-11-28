@@ -17,6 +17,7 @@ class LocationSearchViewModel: ObservableObject {
     @Published var searchResult: [CityData] = []
     @Published var selectedCityCurrentWeather: CurrentWeatherModel? = nil
     @Published var selectedCityforecastWeather: [ForecastList] = []
+    @Published var selectedCityDetail: CityData? = nil
     @Published var backgroundColour: LinearGradient? = GradientBackgroundColours.instance.sunnyDay
     
     private var homeVM = HomeViewModel()
@@ -24,10 +25,14 @@ class LocationSearchViewModel: ObservableObject {
     private var weatherDataServices = WeatherDataServices()
     private var cancellables = Set<AnyCancellable>()
     
+    private var latitude: Double? = 0.0
+    private var longitude: Double? = 0.0
+    
     init() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.selectedCityCurrentWeather = WeatherMokeData.instance.selectedCityCurrentWeather
             self.selectedCityforecastWeather = WeatherMokeData.instance.selectedCityForecastWeather
+            self.selectedCityDetail = WeatherMokeData.instance.location[4]
             self.showBackgroundColour()
         }
         self.searchResultDebounce()
@@ -96,21 +101,28 @@ class LocationSearchViewModel: ObservableObject {
                   let state = mapItem.placemark.administrativeArea,
                   let country = mapItem.placemark.country else { return }
             
-            let latitude = mapItem.placemark.coordinate.latitude
-            let longitude = mapItem.placemark.coordinate.longitude
+            self.latitude = mapItem.placemark.coordinate.latitude
+            self.longitude = mapItem.placemark.coordinate.longitude
             
-            let cityData = CityData(title: cityDetail.title,
+            self.selectedCityDetail = CityData(title: cityDetail.title,
                                     subtitle: cityDetail.subtitle,
                                     city: city,
                                     state: state,
                                     country: country,
-                                    latitude: latitude,
-                                    longitude: longitude)
+                                    latitude: latitude ?? 0.0,
+                                    longitude: longitude ?? 0.0)
 
             //await fetchLocationWeatherData(cityName: cityData)
             //await fetchLocationForecastWeatherData(cityName: cityData)
         } catch {
             print("Fetch city Detail error: \(error.localizedDescription)")
         }
+    }
+    
+    func saveSelectedCity() {
+        DataManager.instance.addCityData(cityName: selectedCityDetail?.title ?? "",
+                                           latitude: self.selectedCityDetail?.latitude ?? 0.0,
+                                           longitude: self.selectedCityDetail?.longitude ?? 0.0)
+        self.queryText = ""
     }
 }
