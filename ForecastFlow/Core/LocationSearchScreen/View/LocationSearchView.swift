@@ -11,9 +11,10 @@ struct LocationSearchView: View {
     @EnvironmentObject private var homeVM: HomeViewModel
     @StateObject var locationSearchManager = LocationSearchManager()
     @StateObject var locationSearchVM = LocationSearchViewModel()
+    @ObservedObject private var coreDataAlert = DataManager.instance
     @State private var showSheet: Bool = false
-    @State private var showAlert: Bool = false
     @State private var isSaveLocation: Bool = true
+    @State private var coreDataError: CoreDataErrors?
     
     var body: some View {
         NavigationStack {
@@ -58,6 +59,8 @@ struct LocationSearchView: View {
                 showList()
             }
         }
+        .coreDataErrorAlert($coreDataAlert.showAlert,
+                            error: DataManager.instance.alertMessage ?? .coreDataFetchError)
     }
 }
 
