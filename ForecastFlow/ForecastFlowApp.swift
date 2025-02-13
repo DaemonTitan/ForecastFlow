@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct ForecastFlowApp: App {
-    @StateObject private var vm = HomeViewModel()
+    @StateObject private var vm = HomeViewModel(weatherDataServices: WeatherDataServices())
     @StateObject private var locationServices = LocationManager()
 //    @StateObject private var locationSearchVM = LocationSearchViewModel()
 //    @StateObject private var locationSearchManager = LocationSearchManager()

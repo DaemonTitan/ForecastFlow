@@ -26,7 +26,6 @@
 		AD4987A02CB69F3F000E8362 /* WeatherDetailBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD49879F2CB69F3F000E8362 /* WeatherDetailBox.swift */; };
 		AD4987A22CB6A942000E8362 /* ForecastSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4987A12CB6A942000E8362 /* ForecastSegment.swift */; };
 		AD5933D72C91B8670000F287 /* ForecastFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5933D62C91B8670000F287 /* ForecastFlowApp.swift */; };
-		AD5933D92C91B8670000F287 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5933D82C91B8670000F287 /* ContentView.swift */; };
 		AD5933DB2C91B8680000F287 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD5933DA2C91B8680000F287 /* Images.xcassets */; };
 		AD5933DE2C91B8680000F287 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD5933DD2C91B8680000F287 /* Preview Assets.xcassets */; };
 		AD5933E82C91B8680000F287 /* ForecastFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5933E72C91B8680000F287 /* ForecastFlowTests.swift */; };
@@ -106,7 +105,6 @@
 		AD4987A12CB6A942000E8362 /* ForecastSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSegment.swift; sourceTree = "<group>"; };
 		AD5933D32C91B8670000F287 /* ForecastFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForecastFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5933D62C91B8670000F287 /* ForecastFlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastFlowApp.swift; sourceTree = "<group>"; };
-		AD5933D82C91B8670000F287 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AD5933DA2C91B8680000F287 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AD5933DD2C91B8680000F287 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AD5933E32C91B8680000F287 /* ForecastFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForecastFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,7 +220,6 @@
 			children = (
 				ADC77A382CA529C400995916 /* Info.plist */,
 				AD5933D62C91B8670000F287 /* ForecastFlowApp.swift */,
-				AD5933D82C91B8670000F287 /* ContentView.swift */,
 				AD5934122C948D570000F287 /* BuildPhases */,
 				AD5934042C91BBE60000F287 /* Utilities */,
 				AD5934002C91BB3C0000F287 /* Resources */,
@@ -624,7 +621,6 @@
 				ADDE078F2CC878D700770CE7 /* CurrentWeatherView.swift in Sources */,
 				AD63A0052CEE9ACD00FAD836 /* DataManager.swift in Sources */,
 				AD63A0032CE773A200FAD836 /* WeatherData.xcdatamodeld in Sources */,
-				AD5933D92C91B8670000F287 /* ContentView.swift in Sources */,
 				ADDE07A32CCA19A100770CE7 /* ButtonTapAnimation.swift in Sources */,
 				AD49878C2CACE3F3000E8362 /* String.swift in Sources */,
 				AD4987972CB17773000E8362 /* SunraiseSunSet.swift in Sources */,

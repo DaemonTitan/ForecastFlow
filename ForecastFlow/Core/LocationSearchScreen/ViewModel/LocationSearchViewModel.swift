@@ -20,7 +20,6 @@ class LocationSearchViewModel: ObservableObject {
     @Published var selectedCityDetail: CityData? = nil
     @Published var backgroundColour: LinearGradient? = GradientBackgroundColours.instance.sunnyDay
     
-    private var homeVM = HomeViewModel()
     private var locationSearchManager = LocationSearchManager()
     private var weatherDataServices = WeatherDataServices()
     private var cancellables = Set<AnyCancellable>()

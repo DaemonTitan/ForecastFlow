@@ -7,7 +7,12 @@
 
 import Foundation
 
-class WeatherDataServices {
+protocol WeatherServices {
+    func decodeCurrentWeatherData(lat: Double, lon: Double, units: String, apiKey: String, locationName: String) async throws -> CurrentWeatherModel?
+    func decodeForecastWeatherData(lat: Double, lon: Double, units: String, apiKey: String) async throws -> [ForecastList]
+}
+
+class WeatherDataServices: WeatherServices {
     var currentWeatherData: CurrentWeatherModel? = nil
     var forecastWeatherData: ForecastWeatherData? = nil
     
