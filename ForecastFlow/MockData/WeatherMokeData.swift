@@ -10,7 +10,7 @@ import Foundation
 class WeatherMokeData {
     static let instance = WeatherMokeData()
     
-    let homeVM = HomeViewModel()
+    let homeVM = HomeViewModel(weatherDataServices: WeatherDataServices())
     let locationServices = LocationManager()
     
     let currentWeather = CurrentWeatherModel(

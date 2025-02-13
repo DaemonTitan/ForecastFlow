@@ -10,7 +10,7 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject {
     private let locationManager = LocationManager()
-    private let weatherDataServices = WeatherDataServices()
+    private let weatherDataServices: WeatherServices
     
     @Published var backgroundColour: LinearGradient? = GradientBackgroundColours.instance.sunnyDay
     @Published var currentWeatherData: CurrentWeatherModel? = nil
@@ -18,7 +18,8 @@ class HomeViewModel: ObservableObject {
     @Published var filteredDailyForecast: [ForecastList] = []
     @Published var iconImage: IconImages = .Default
     
-    init() {
+    init(weatherDataServices: WeatherServices) {
+        self.weatherDataServices = weatherDataServices
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.currentWeatherData = WeatherMokeData.instance.currentWeather
             self.filteredDailyForecast = WeatherMokeData.instance.forecastWeather
