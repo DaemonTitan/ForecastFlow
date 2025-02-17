@@ -12,7 +12,6 @@ struct CurrentWeatherView: View {
     @EnvironmentObject var homeVM: HomeViewModel
     
     var body: some View {
-
         ZStack {
             TrapezoidShape(point1: CGPoint(x: 40, y: 160),
                                         point2: CGPoint(x: 360, y: 160),
@@ -26,6 +25,7 @@ struct CurrentWeatherView: View {
                 cityTemperature
             }
         }
+        //.shadow(color: .gray.opacity(7), radius: 30, x: 0, y: 10)
     }
 }
 
@@ -43,7 +43,7 @@ extension CurrentWeatherView {
             Text("\(homeVM.displayCurrentDate)")
                 .font(.system(size: 18))
                 .foregroundStyle(Color.whiteColor)
-            Text("time")
+            //Text("time")
         }
         .offset(y: -20)
         .padding()
@@ -60,13 +60,13 @@ extension CurrentWeatherView {
             .font(.system(size: 18))
             Text("\(homeVM.currentWeatherData?.weather[0].main ?? "")")
         }
+        .foregroundStyle(Color.whiteColor)
     }
 }
 
 @available(iOS 17, *)
 #Preview(traits: .sizeThatFitsLayout) {
     CurrentWeatherView()
-        .preferredColorScheme(.dark)
         .environmentObject(WeatherMokeData.instance.homeVM)
         .padding()
 }
