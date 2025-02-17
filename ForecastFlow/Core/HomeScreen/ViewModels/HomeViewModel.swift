@@ -27,6 +27,7 @@ class HomeViewModel: ObservableObject {
         }
     }
     
+    //Repeated
     @MainActor
     func fetchCurrentWeatherData() async {
         do {
@@ -43,6 +44,7 @@ class HomeViewModel: ObservableObject {
         }
     }
     
+    //Repeated
     @MainActor
     func fetchForecastWeatherData() async {
         do {

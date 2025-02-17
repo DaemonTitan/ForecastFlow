@@ -19,13 +19,14 @@ class DataManager: ObservableObject {
         let container = NSPersistentContainer(name: "WeatherData")
         container.loadPersistentStores { description, error in
             if let error = error {
-                //print("Error loading core data: \(error)")
+                print("Error loading core data: \(error)")
                 self.showAlert = true
                 self.alertMessage = .coreDataLoadingError
             }
         }
         return container
     }()
+    
     private lazy var context: NSManagedObjectContext = container.viewContext
     
     init() {
@@ -37,7 +38,7 @@ class DataManager: ObservableObject {
         do {
             savedCities = try context.fetch(request)
         } catch {
-            //print("Error fetching data: \(error.localizedDescription)")
+            print("Error fetching data: \(error.localizedDescription)")
             showAlert = true
             alertMessage = .coreDataFetchError
         }
@@ -45,8 +46,8 @@ class DataManager: ObservableObject {
 
     // MARK: Save and delete city data from LocationCoordinates
     func addCityData(cityName: String, latitude: Double, longitude: Double) {
-        if savedCities.contains(where: { $0.cityName == cityName }) {
-            //print("Selected city \(cityName) is already saved.")
+        if savedCities.contains(where: { $0.latitude == latitude }) {
+            print("Selected city \(cityName) is already saved.")
             showAlert = true
             alertMessage = .dataAlreadySaveError(cityName: cityName)
         } else {
@@ -54,13 +55,15 @@ class DataManager: ObservableObject {
             data.cityName = cityName
             data.latitude = latitude
             data.longitude = longitude
+            print("\(latitude) : \(longitude)")
             
             do {
                 try context.save()
+                print("Data saved successfully.")
                 fetchData(from: "LocationCoordinates")
             } catch {
-                //let nsError = error as NSError
-                //print("Error save data: \(nsError)")
+                let nsError = error as NSError
+                print("Error save data: \(nsError)")
                 alertMessage = .coreDataSaveError
             }
         }
@@ -75,8 +78,8 @@ class DataManager: ObservableObject {
             try context.save()
             fetchData(from: "LocationCoordinates")
         } catch {
-            //let nsError = error as NSError
-            //print("Error saving data: \(nsError)")
+            let nsError = error as NSError
+            print("Error saving data: \(nsError)")
             showAlert = true
             alertMessage = .coreDataDeleteError
         }

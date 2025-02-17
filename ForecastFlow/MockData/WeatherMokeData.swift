@@ -44,7 +44,7 @@ class WeatherMokeData {
             sunset: 1729063256),
         timezone: 36000,
         id: 2208303,
-        name: "Brookvale",
+        name: "Sydney",
         cityName: "Sydney")
     
     let selectedCityCurrentWeather = CurrentWeatherModel(

@@ -18,46 +18,31 @@ struct LocationSearchView: View {
     
     var body: some View {
         NavigationStack {
-            List(locationSearchManager.searchResult) { cityName in
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text(cityName.title)
-                        Text(cityName.subtitle)
-                    }
-                    Spacer()
-                }
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    showSheet.toggle()
-                    Task {
-                        //await locationSearchVM.fetchSearchResults(cityDetail: cityName)
+            searchResults
+                .listStyle(.plain)
+                .navigationTitle(L10n.LocationSearch.title)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        XMarkButton()
                     }
                 }
-            }
-            .background(Color.fogGrayColor.ignoresSafeArea())
-            .listStyle(.plain)
-            .navigationTitle(L10n.LocationSearch.title)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    XMarkButton()
+                .searchable(text: $locationSearchVM.queryText,
+                            placement: .navigationBarDrawer(displayMode: .always),
+                            prompt: L10n.LocationSearch.searchBarText)
+                .onChange(of: locationSearchVM.debounceText) { text in
+                    if !locationSearchVM.debounceText.isEmpty {
+                        locationSearchManager.searchCity(for: text)
+                    } else {
+                        locationSearchManager.searchResult = []
+                    }
                 }
-            }
-            .searchable(text: $locationSearchVM.queryText,
-                        placement: .navigationBarDrawer(displayMode: .always),
-                        prompt: L10n.LocationSearch.searchBarText)
-            .onChange(of: locationSearchVM.debounceText) { text in
-                if !locationSearchVM.debounceText.isEmpty {
-                    locationSearchManager.searchCity(for: text)
-                } else {
-                    locationSearchManager.searchResult = []
+            
+                .sheet(isPresented: $showSheet) {
+                    weatherDetailView
                 }
-            }
-            .sheet(isPresented: $showSheet) {
-                weatherDetailView
-            }
-            .overlay {
-                showList()
-            }
+                .overlay {
+                    showList()
+                }
         }
         .coreDataErrorAlert($coreDataAlert.showAlert,
                             error: DataManager.instance.alertMessage ?? .coreDataFetchError)
@@ -65,22 +50,45 @@ struct LocationSearchView: View {
 }
 
 extension LocationSearchView {
-    
     @ViewBuilder
     func showList() -> some View {
         if !DataManager.instance.savedCities.isEmpty && locationSearchVM.debounceText.isEmpty {
+            // Show saved list
             List {
                 ForEach(DataManager.instance.savedCities) { entity in
-                        VStack {
-                            Text(entity.cityName ?? "")
-                            Text("\(entity.latitude)")
-                            Text("\(entity.longitude)")
-                        }
+                    VStack {
+                        Text(entity.cityName ?? "")
+                        Text("\(entity.latitude)")
+                        Text("\(entity.longitude)")
                     }
+                    //CurrentWeatherView()
+                }
                 .onDelete(perform: DataManager.instance.deleteCityData)
-              }
+            }
+            .scrollContentBackground(.hidden)
+            
         } else if DataManager.instance.savedCities.isEmpty && locationSearchVM.debounceText.isEmpty {
             Text("No saved cities")
+        }
+    }
+    
+    var searchResults: some View {
+        List(locationSearchManager.searchResult) { cityName in
+            HStack {
+                // Show search results in list
+                VStack(alignment: .leading) {
+                    Text(cityName.title)
+                    Text(cityName.subtitle)
+                }
+                Spacer()
+            }
+            .contentShape(Rectangle())
+            .onTapGesture {
+                showSheet.toggle()
+                Task {
+                    await locationSearchVM.fetchSearchResults(cityDetail: cityName)
+                }
+            }
         }
     }
     

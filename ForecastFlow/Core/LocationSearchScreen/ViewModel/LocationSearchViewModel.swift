@@ -17,26 +17,32 @@ class LocationSearchViewModel: ObservableObject {
     @Published var searchResult: [CityData] = []
     @Published var selectedCityCurrentWeather: CurrentWeatherModel? = nil
     @Published var selectedCityforecastWeather: [ForecastList] = []
-    @Published var selectedCityDetail: CityData? = nil
     @Published var backgroundColour: LinearGradient? = GradientBackgroundColours.instance.sunnyDay
     
     private var locationSearchManager = LocationSearchManager()
     private var weatherDataServices = WeatherDataServices()
     private var cancellables = Set<AnyCancellable>()
     
+    private var city: String? = ""
     private var latitude: Double? = 0.0
     private var longitude: Double? = 0.0
     
     init() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.selectedCityCurrentWeather = WeatherMokeData.instance.selectedCityCurrentWeather
-            self.selectedCityforecastWeather = WeatherMokeData.instance.selectedCityForecastWeather
-            self.selectedCityDetail = WeatherMokeData.instance.location[4]
+            //self.loadLocationSearchMockData()
             self.showBackgroundColour()
         }
         self.searchResultDebounce()
     }
     
+    // MARK: Load Mock Data
+    func loadLocationSearchMockData() {
+        self.selectedCityCurrentWeather = WeatherMokeData.instance.selectedCityCurrentWeather
+        self.selectedCityforecastWeather = WeatherMokeData.instance.selectedCityForecastWeather
+        //self.selectedCityDetail = WeatherMokeData.instance.location[4]
+    }
+    
+    // MARK: Search Bar Debounce
     func searchResultDebounce(dueTime: TimeInterval = 0.8) {
         $queryText
             .removeDuplicates()
@@ -47,6 +53,8 @@ class LocationSearchViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    //Repeated
+    // MARK: Fetch weather data when user selected from search result
     func fetchLocationWeatherData(cityName: CityData) async {
         do {
             self.selectedCityCurrentWeather = try await weatherDataServices.decodeCurrentWeatherData(
@@ -60,6 +68,8 @@ class LocationSearchViewModel: ObservableObject {
         }
     }
     
+    //Repeated
+    // MARK: Fetch forecasted weather data when user selected from search result/
     func fetchLocationForecastWeatherData(cityName: CityData) async {
         do {
             self.selectedCityforecastWeather = try await weatherDataServices.decodeForecastWeatherData(
@@ -72,14 +82,17 @@ class LocationSearchViewModel: ObservableObject {
         }
     }
     
+    // MARK: Show Weather Detail Label
     func weatherDetail(_ weatherDataType: String) -> String {
         return Tools.weatherData(weatherDataType: weatherDataType, weatherData: selectedCityCurrentWeather)
     }
     
+    // MARK: Show Background Colour
     func showBackgroundColour() {
         self.backgroundColour = Tools.setBackgroundColour(weatherData: selectedCityCurrentWeather)
     }
     
+    // MARK: Clear Select City
     func clearSelectedCity() {
 //        DispatchQueue.main.async {
 //            self.selectedCity = nil
@@ -87,6 +100,8 @@ class LocationSearchViewModel: ObservableObject {
         self.searchResult = []
     }
     
+    
+    // MARK: Get Search Results Data
     func fetchSearchResults(cityDetail: CityData) async {
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = cityDetail.title
@@ -100,28 +115,31 @@ class LocationSearchViewModel: ObservableObject {
                   let state = mapItem.placemark.administrativeArea,
                   let country = mapItem.placemark.country else { return }
             
+            self.city = city
             self.latitude = mapItem.placemark.coordinate.latitude
             self.longitude = mapItem.placemark.coordinate.longitude
             
-            self.selectedCityDetail = CityData(title: cityDetail.title,
+            let cityDetailData = CityData(title: cityDetail.title,
                                     subtitle: cityDetail.subtitle,
                                     city: city,
                                     state: state,
                                     country: country,
                                     latitude: latitude ?? 0.0,
                                     longitude: longitude ?? 0.0)
-
-            //await fetchLocationWeatherData(cityName: cityData)
-            //await fetchLocationForecastWeatherData(cityName: cityData)
+            Task {
+                await fetchLocationWeatherData(cityName: cityDetailData)
+                await fetchLocationForecastWeatherData(cityName: cityDetailData)
+            }
         } catch {
             print("Fetch city Detail error: \(error.localizedDescription)")
         }
     }
     
+    // MARK: Save Selected City Data Into Core Data
     func saveSelectedCity() {
-        DataManager.instance.addCityData(cityName: selectedCityDetail?.title ?? "",
-                                           latitude: self.selectedCityDetail?.latitude ?? 0.0,
-                                           longitude: self.selectedCityDetail?.longitude ?? 0.0)
+        DataManager.instance.addCityData(cityName: city ?? "",
+                                         latitude: latitude ?? 0.0,
+                                         longitude: longitude ?? 0.0)
         self.queryText = ""
     }
 }
